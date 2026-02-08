@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://eq16xhi4u081"]
+
+[ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
+
+[node name="Root" type="Node" unique_id=1127780170]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1181953664]
+script = ExtResource("1_f3sb7")
+
+[node name="FPS_label" type="Label" parent="CanvasLayer" unique_id=1544948914]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 267.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 32
+text = "FPS: 2137"
+
+[node name="VRAM_label" type="Label" parent="CanvasLayer" unique_id=215614946]
+offset_left = 50.0
+offset_top = 90.0
+offset_right = 333.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 32
+text = "VRAM: 2137"
+
+[node name="GPU_label" type="Label" parent="CanvasLayer" unique_id=1259591489]
+offset_left = 50.0
+offset_top = 130.0
+offset_right = 333.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 32
+text = "GPU: 2137"
+
+[node name="CPU_label" type="Label" parent="CanvasLayer" unique_id=851459798]
+offset_left = 50.0
+offset_top = 170.0
+offset_right = 333.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 32
+text = "CPU: 2137"
