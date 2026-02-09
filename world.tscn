@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://eq16xhi4u081"]
 
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 
 [node name="Root" type="Node" unique_id=1127780170]
 
@@ -38,3 +40,15 @@ offset_right = 333.0
 offset_bottom = 239.0
 theme_override_font_sizes/font_size = 32
 text = "CPU: 2137"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389180202]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=87759625]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 7, 7)
+current = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1911154302]
+axis_lock_linear_y = true
+script = ExtResource("2_fj7yv")
+
+[node name="player" parent="CharacterBody3D" unique_id=739061967 instance=ExtResource("3_tlwt5")]
