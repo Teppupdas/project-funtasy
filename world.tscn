@@ -10,7 +10,6 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389180202]
 transform = Transform3D(0.76604444, -0.49240384, 0.4131759, 0, 0.64278764, 0.76604444, -0.6427876, -0.58682406, 0.4924039, 0, 0, 0)
-shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=87759625]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 7, 7)
@@ -58,9 +57,9 @@ text = "CPU: 2137"
 axis_lock_linear_y = true
 script = ExtResource("2_fj7yv")
 
-[node name="player" parent="World/player" unique_id=739061967 instance=ExtResource("3_tlwt5")]
+[node name="player" parent="World/player" unique_id=23332130 instance=ExtResource("3_tlwt5")]
 
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
-transform = Transform3D(0.7431448, 0, 0.6691306, 0, 1, 0, -0.6691306, 0, 0.7431448, 9.945, 0, -10.905)
+transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 9.945, 0, -10.905)
