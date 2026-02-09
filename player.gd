@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var model_3d = $player
 
 
-var move_vector = Vector3.FORWARD
+var move_vector = Vector2.UP
 const STANDARD_SPEED = 2.7 #standardowa i maksymalna;    dla klawiatury
 
 
@@ -29,14 +29,12 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	move_vector.x = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))
-	move_vector.z = (Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
-	move_vector = move_vector.normalized()
+	move_vector = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
-	set_velocity(move_vector * STANDARD_SPEED)
+	set_velocity(Vector3(move_vector.x, 0, move_vector.y) * STANDARD_SPEED)
 
-	if move_vector != Vector3.ZERO:
-		action_direction = move_vector
+	if move_vector != Vector2.ZERO:
+		action_direction = Vector3(move_vector.x, 0, move_vector.y)
 
 
 
