@@ -1,6 +1,6 @@
 extends Camera3D
 
-@onready var player = $"../World/player"
+@onready var player = $"../World/Player"
 
 var speed = 3
 var standard_offset = Vector3(0,7,7)

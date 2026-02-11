@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://cu518ew5fj0ua" path="res://camera.gd" id="1_aqk2v"]
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://d2soioc5yji75" path="res://movement_playground.blend" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
 [node name="Root" type="Node" unique_id=1127780170]
 
@@ -53,13 +56,22 @@ text = "CPU: 2137"
 
 [node name="World" type="Node" parent="." unique_id=1254761138]
 
-[node name="player" type="CharacterBody3D" parent="World" unique_id=1911154302]
-axis_lock_linear_y = true
+[node name="movement_playground" parent="World" unique_id=406388078 instance=ExtResource("3_dwbse")]
+transform = Transform3D(-0.4508776, 0, -0.89258575, 0, 1, 0, 0.89258575, 0, -0.4508776, -3.11, 0, -17.495)
+
+[node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
+floor_constant_speed = true
+floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
 
-[node name="player" parent="World/player" unique_id=23332130 instance=ExtResource("3_tlwt5")]
+[node name="player" parent="World/Player" unique_id=23332130 instance=ExtResource("3_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player" unique_id=103614961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_dwbse")
 
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
-transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 9.945, 0, -10.905)
+transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)

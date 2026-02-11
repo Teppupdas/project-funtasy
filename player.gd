@@ -3,8 +3,8 @@ extends CharacterBody3D
 @onready var model_3d = $player
 
 
-var move_vector = Vector2.UP
-const STANDARD_SPEED = 2.7 #standardowa i maksymalna;    dla klawiatury
+var move_vector = Vector2.ZERO
+const STANDARD_SPEED = 5 #standardowa i maksymalna;    dla klawiatury
 
 
 enum Actions { IDLE, DASH, QUICK_ATTACK, STRONG_ATTACK, DEATH }
