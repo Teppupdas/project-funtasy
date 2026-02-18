@@ -3,6 +3,16 @@ extends CharacterBody3D
 @onready var model_3d = $player
 
 
+
+
+var max_hp: int
+var current_hp: int 
+
+
+
+
+
+
 enum Actions { MOVEMENT, DASH }
 var current_action: Actions = Actions.MOVEMENT
 var action_direction = Vector3.FORWARD

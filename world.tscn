@@ -2,14 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cu518ew5fj0ua" path="res://camera.gd" id="1_aqk2v"]
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_ioo17"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://d2soioc5yji75" path="res://movement_playground.blend" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
+[ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
+radius = 1.0
+
 [node name="Root" type="Node" unique_id=1127780170]
+
+[node name="Save" type="Node" parent="." unique_id=664821633]
+script = ExtResource("1_ioo17")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389180202]
 transform = Transform3D(0.76604444, -0.49240384, 0.4131759, 0, 0.64278764, 0.76604444, -0.6427876, -0.58682406, 0.4924039, 0, 0, 0)
@@ -54,6 +63,34 @@ offset_bottom = 239.0
 theme_override_font_sizes/font_size = 32
 text = "CPU: 2137"
 
+[node name="HP_label" type="Label" parent="CanvasLayer" unique_id=226080692]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -179.0
+offset_right = 445.40503
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "HP"
+
+[node name="ActionPromptLabel" type="Label" parent="CanvasLayer" unique_id=1490773433]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -160.0
+offset_right = 223.00122
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Action Prompt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="World" type="Node" parent="." unique_id=1254761138]
 
 [node name="movement_playground" parent="World" unique_id=406388078 instance=ExtResource("3_dwbse")]
@@ -75,3 +112,15 @@ shape = SubResource("CapsuleShape3D_dwbse")
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
+
+[node name="pentagram" parent="World" unique_id=1396384343 instance=ExtResource("8_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.803505, 0, 0)
+script = ExtResource("9_ic0uy")
+
+[node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
+shape = SubResource("SphereShape3D_ioo17")
+
+[connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]
