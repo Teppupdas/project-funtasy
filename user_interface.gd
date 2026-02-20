@@ -8,9 +8,9 @@ extends CanvasLayer
 @onready var hp_label = $HP_label
 
 
-var action_prompt_active = false
-var current_action_object = null
-@onready var action_prompt_label = $ActionPromptLabel
+var interaction_prompt_active = false
+var current_interaction_object = null
+@onready var interaction_prompt_label = $InteractionPromptLabel
 
 
 
@@ -36,8 +36,8 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 
 
-	if Input.is_action_just_pressed("action") and action_prompt_active:
-		current_action_object.handle_action()
+	if Input.is_action_just_pressed("action") and interaction_prompt_active:
+		current_interaction_object.handle_interaction()
 
 
 
@@ -52,13 +52,13 @@ func set_hp(max_hp, current_hp):
 
 
 
-func show_action_prompt(action_object: Node3D, action):
-	action_prompt_active = true
-	current_action_object = action_object
-	action_prompt_label.text = action
-	action_prompt_label.show()
+func show_interaction_prompt(interaction_object: Node3D, interaction):
+	interaction_prompt_active = true
+	current_interaction_object = interaction_object
+	interaction_prompt_label.text = interaction
+	interaction_prompt_label.show()
 
 
-func hide_action_prompt():
-	action_prompt_active = false
-	action_prompt_label.hide()
+func hide_interaction_prompt():
+	interaction_prompt_active = false
+	interaction_prompt_label.hide()
