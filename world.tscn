@@ -113,7 +113,7 @@ shape = SubResource("CapsuleShape3D_dwbse")
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
 
-[node name="pentagram" parent="World" unique_id=1396384343 instance=ExtResource("8_wse8f")]
+[node name="pentagram" parent="World" unique_id=1284926855 instance=ExtResource("8_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.803505, 0, 0)
 script = ExtResource("9_ic0uy")
 
