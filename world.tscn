@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://c206en6hj6qml" path="res://terraintest.blend" id="10_wse8f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
@@ -120,6 +121,9 @@ script = ExtResource("9_ic0uy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")
+
+[node name="terraintest" parent="World" unique_id=167506120 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.409454, 0, 0)
 
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]
