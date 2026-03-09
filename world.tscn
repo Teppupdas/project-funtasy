@@ -101,8 +101,7 @@ floor_constant_speed = true
 floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
 
-[node name="player" parent="World/Player" unique_id=23332130 instance=ExtResource("3_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="player" parent="World/Player" unique_id=1260467649 instance=ExtResource("3_tlwt5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player" unique_id=103614961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
