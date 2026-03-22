@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c206en6hj6qml"
-path="res://.godot/imported/terraintest.blend-fec53633316779ceefe71cf87165d17d.scn"
+uid="uid://j27s4rykbu33"
+path="res://.godot/imported/gothic.blend-cc3e0d6a951b9d06144617b8db9460fe.scn"
 
 [deps]
 
-source_file="res://terraintest.blend"
-dest_files=["res://.godot/imported/terraintest.blend-fec53633316779ceefe71cf87165d17d.scn"]
+source_file="res://gothic.blend"
+dest_files=["res://.godot/imported/gothic.blend-cc3e0d6a951b9d06144617b8db9460fe.scn"]
 
 [params]
 

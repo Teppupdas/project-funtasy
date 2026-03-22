@@ -4,12 +4,11 @@
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_ioo17"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://d2soioc5yji75" path="res://movement_playground.blend" id="3_dwbse"]
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://c206en6hj6qml" path="res://terraintest.blend" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://j27s4rykbu33" path="res://gothic.blend" id="9_ioo17"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
@@ -94,9 +93,6 @@ vertical_alignment = 1
 
 [node name="World" type="Node" parent="." unique_id=1254761138]
 
-[node name="movement_playground" parent="World" unique_id=406388078 instance=ExtResource("3_dwbse")]
-transform = Transform3D(-0.4508776, 0, -0.89258575, 0, 1, 0, 0.89258575, 0, -0.4508776, -3.11, 0, -17.495)
-
 [node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
 floor_constant_speed = true
 floor_snap_length = 0.3
@@ -114,7 +110,6 @@ shape = SubResource("CapsuleShape3D_dwbse")
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
 
 [node name="pentagram" parent="World" unique_id=1284926855 instance=ExtResource("8_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.803505, 0, 0)
 script = ExtResource("9_ic0uy")
 
 [node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
@@ -122,8 +117,7 @@ script = ExtResource("9_ic0uy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")
 
-[node name="terraintest" parent="World" unique_id=167506120 instance=ExtResource("10_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.409454, 0, 0)
+[node name="gothic" parent="World" unique_id=1067263301 instance=ExtResource("9_ioo17")]
 
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]
