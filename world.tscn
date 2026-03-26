@@ -12,6 +12,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wse8f"]
+radius = 0.2
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
 radius = 1.0
 
@@ -22,11 +25,6 @@ script = ExtResource("1_ioo17")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389180202]
 transform = Transform3D(0.76604444, -0.49240384, 0.4131759, 0, 0.64278764, 0.76604444, -0.6427876, -0.58682406, 0.4924039, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=87759625]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 7, 7)
-current = true
-script = ExtResource("1_aqk2v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1181953664]
 script = ExtResource("1_f3sb7")
@@ -94,6 +92,8 @@ vertical_alignment = 1
 [node name="World" type="Node" parent="." unique_id=1254761138]
 
 [node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
+physics_interpolation_mode = 1
+collision_layer = 2
 floor_constant_speed = true
 floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
@@ -104,6 +104,17 @@ script = ExtResource("2_fj7yv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_dwbse")
 
+[node name="CameraPivot" type="Node3D" parent="World/Player" unique_id=168211943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("1_aqk2v")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="World/Player/CameraPivot" unique_id=1578143808]
+shape = SubResource("SphereShape3D_wse8f")
+spring_length = 4.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
+
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
@@ -113,6 +124,8 @@ transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.553
 script = ExtResource("9_ic0uy")
 
 [node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")

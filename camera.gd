@@ -1,21 +1,25 @@
-extends Camera3D
+extends Node3D
 
-@onready var player = $"../World/Player"
+# czułość
+var mouse_sense = 0.15
+var pad_sense = 250
 
-var speed = 3
-var standard_offset = Vector3(0,7,7)
-var look_offset = Vector2.ZERO
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #blokada kursora i nie pokazuje go
 
-func _ready() -> void:
-	pass
+func _unhandled_input(event):
+	# obsługa myszki
+	if event is InputEventMouseMotion:
+		rotate_cam(event.relative.x * mouse_sense, event.relative.y * mouse_sense)
 
-func _process(delta: float) -> void:
+
+func _process(delta):
+	# obsługa pada
+	var joy = Input.get_vector("look_left", "look_right", "look_up", "look_down")
+	rotate_cam(joy.x * pad_sense * delta, joy.y * pad_sense * delta) # delta ma być
+
+func rotate_cam(x, y):
+	rotate_y(deg_to_rad(-x)) #obraca lewo-prawo
 	
-	look_offset = Input.get_vector("look_left", "look_right", "look_forward", "look_back")
-
-
-
-
-func _physics_process(delta: float) -> void:
-	var target_position = player.global_position + standard_offset + (Vector3(look_offset.x, 0, look_offset.y) * 3)
-	global_position = global_position.lerp(target_position, delta * speed)
+	rotation_degrees.x -= y #obraca góra-dół
+	rotation_degrees.x = clamp(rotation_degrees.x, -50, 50) #blokuje zakres góra-dół
