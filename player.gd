@@ -58,10 +58,26 @@ var move_speed = 7.0
 var rotation_speed = 0.15
 var braking_speed = 1.5
 
+var jump_velocity = 7.0
+var short_jump_gravity = 16
+var long_jump_gravity = 10
+var fall_gravity = 27
 
 
 
-func _physics_process(_delta):
+
+
+
+func _physics_process(delta):
+	movement(delta)
+	jump_and_gravity(delta)
+	move_and_slide() # poruszanie sie to powoduje
+
+
+
+
+func movement(delta):
+	
 	# pobranie input dla ruchu
 	var input_vector = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
@@ -86,7 +102,19 @@ func _physics_process(_delta):
 		velocity.x = move_toward(velocity.x, 0, braking_speed)
 		velocity.z = move_toward(velocity.z, 0, braking_speed)
 
-	move_and_slide() # poruszanie sie to powoduje
+func jump_and_gravity(delta):
 	
+		# skok
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+
 	
-	
+	if not is_on_floor():
+		if velocity.y > 0: # wznoszenie
+			if Input.is_action_pressed("jump"):
+				velocity.y -= long_jump_gravity * delta
+			else:
+				velocity.y -= short_jump_gravity * delta
+		else:
+			# spadanie
+			velocity.y -= fall_gravity * delta

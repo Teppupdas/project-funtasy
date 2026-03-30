@@ -130,7 +130,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")
 
-[node name="gothic" parent="World" unique_id=1067263301 instance=ExtResource("9_ioo17")]
+[node name="gothic" parent="World" unique_id=2102244924 instance=ExtResource("9_ioo17")]
 
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]
