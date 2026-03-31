@@ -58,11 +58,16 @@ var move_speed = 7.0
 var rotation_speed = 0.15
 var braking_speed = 1.5
 
-var jump_velocity = 7.0
-var short_jump_gravity = 16
-var long_jump_gravity = 10
-var fall_gravity = 27
 
+var jump_velocity = 7.0
+var gravity_up = 13.0
+var gravity_down = 27.0
+var jump_cut = 2.5
+var coyote_time = 0.1
+var buffer_time = 0.1
+
+var coyote_timer = coyote_time
+var buffer_timer = 0
 
 
 
@@ -103,18 +108,56 @@ func movement(delta):
 		velocity.z = move_toward(velocity.z, 0, braking_speed)
 
 func jump_and_gravity(delta):
-	
-		# skok
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
 
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer = max(0, coyote_timer - delta)
+
+	buffer_timer = max(0, buffer_timer - delta)
+
+
+
+	if Input.is_action_just_pressed("jump"):
+		buffer_timer = buffer_time
 	
-	if not is_on_floor():
-		if velocity.y > 0: # wznoszenie
-			if Input.is_action_pressed("jump"):
-				velocity.y -= long_jump_gravity * delta
-			else:
-				velocity.y -= short_jump_gravity * delta
-		else:
-			# spadanie
-			velocity.y -= fall_gravity * delta
+	if Input.is_action_just_released("jump"):
+		if velocity.y > 0:
+			velocity.y /= jump_cut
+
+	if Input.is_action_pressed("jump"):
+		pass
+
+
+
+
+	# wykonanie skoku
+	if coyote_timer > 0 and buffer_timer > 0:
+		coyote_timer = 0
+		buffer_timer = 0
+		velocity.y = jump_velocity
+	
+	
+	
+	
+	
+	# grawitacja
+	if is_on_floor():
+		if velocity.y < 0:
+			velocity.y = 0
+	else:
+		if velocity.y > 0: # jeśli wznoszenie
+			velocity.y -= gravity_up * delta
+		else: # jeśli spadanie
+			velocity.y -= gravity_down * delta
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
