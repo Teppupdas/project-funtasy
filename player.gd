@@ -60,15 +60,15 @@ var braking_speed = 1.5
 
 
 var jump_velocity = 7.0
-var gravity_up = 13.0
-var gravity_down = 27.0
+var weak_gravity = 13.0
+var strong_gravity = 27.0
 var jump_cut = 2.5
 var coyote_time = 0.1
 var buffer_time = 0.1
 
 var coyote_timer = coyote_time
 var buffer_timer = 0
-
+var current_gravity = weak_gravity
 
 
 
@@ -122,8 +122,8 @@ func jump_and_gravity(delta):
 		buffer_timer = buffer_time
 	
 	if Input.is_action_just_released("jump"):
-		if velocity.y > 0:
-			velocity.y /= jump_cut
+		current_gravity = strong_gravity
+
 
 	if Input.is_action_pressed("jump"):
 		pass
@@ -135,6 +135,7 @@ func jump_and_gravity(delta):
 	if coyote_timer > 0 and buffer_timer > 0:
 		coyote_timer = 0
 		buffer_timer = 0
+		current_gravity = weak_gravity
 		velocity.y = jump_velocity
 	
 	
@@ -146,10 +147,10 @@ func jump_and_gravity(delta):
 		if velocity.y < 0:
 			velocity.y = 0
 	else:
-		if velocity.y > 0: # jeśli wznoszenie
-			velocity.y -= gravity_up * delta
-		else: # jeśli spadanie
-			velocity.y -= gravity_down * delta
+		if velocity.y < 0:
+			current_gravity = strong_gravity
+		
+		velocity.y -= current_gravity * delta
 	
 	
 	
