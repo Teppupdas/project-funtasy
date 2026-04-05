@@ -109,6 +109,7 @@ func movement(delta):
 
 func jump_and_gravity(delta):
 
+	# timer menagement
 	if is_on_floor():
 		coyote_timer = coyote_time
 	else:
@@ -118,16 +119,12 @@ func jump_and_gravity(delta):
 
 
 
+	# inputy
 	if Input.is_action_just_pressed("jump"):
 		buffer_timer = buffer_time
 	
 	if Input.is_action_just_released("jump"):
 		current_gravity = strong_gravity
-
-
-	if Input.is_action_pressed("jump"):
-		pass
-
 
 
 
@@ -137,11 +134,9 @@ func jump_and_gravity(delta):
 		buffer_timer = 0
 		current_gravity = weak_gravity
 		velocity.y = jump_velocity
-	
-	
-	
-	
-	
+
+
+
 	# grawitacja
 	if is_on_floor():
 		if velocity.y < 0:
@@ -151,14 +146,3 @@ func jump_and_gravity(delta):
 			current_gravity = strong_gravity
 		
 		velocity.y -= current_gravity * delta
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
