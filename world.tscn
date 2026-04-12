@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://j27s4rykbu33" path="res://gothic.blend" id="9_ioo17"]
@@ -94,6 +95,7 @@ vertical_alignment = 1
 [node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
 physics_interpolation_mode = 1
 collision_layer = 2
+collision_mask = 5
 floor_constant_speed = true
 floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
@@ -115,12 +117,15 @@ margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
 
+[node name="CharacterBody3D" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.351246, 4.0677567, -73.03105)
+
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
 
-[node name="pentagram" parent="World" unique_id=1284926855 instance=ExtResource("8_wse8f")]
+[node name="pentagram" parent="World" unique_id=814588783 instance=ExtResource("8_wse8f")]
 script = ExtResource("9_ic0uy")
 
 [node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
@@ -130,7 +135,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")
 
-[node name="gothic" parent="World" unique_id=2102244924 instance=ExtResource("9_ioo17")]
+[node name="gothic" parent="World" unique_id=799122922 instance=ExtResource("9_ioo17")]
 
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]

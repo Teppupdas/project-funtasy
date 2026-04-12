@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3n8a5cq1g54i"]
+
+[ext_resource type="PackedScene" uid="uid://ckn0n0aemhym8" path="res://characters/zomb1/zomb1.blend" id="1_46fl3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uif40"]
+radius = 0.33
+height = 1.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1318007586]
+collision_layer = 4
+
+[node name="zomb1" parent="." unique_id=2072594656 instance=ExtResource("1_46fl3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1789331367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("CapsuleShape3D_uif40")
