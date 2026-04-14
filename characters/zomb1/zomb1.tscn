@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://d3n8a5cq1g54i"]
 
 [ext_resource type="PackedScene" uid="uid://ckn0n0aemhym8" path="res://characters/zomb1/zomb1.blend" id="1_46fl3"]
+[ext_resource type="Script" uid="uid://b2lvsofyx6cng" path="res://characters/zomb1/zomb_1.gd" id="1_uif40"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uif40"]
 radius = 0.33
 height = 1.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1318007586]
+[node name="Zomb1" type="CharacterBody3D" unique_id=1318007586]
 collision_layer = 4
+script = ExtResource("1_uif40")
 
 [node name="zomb1" parent="." unique_id=2072594656 instance=ExtResource("1_46fl3")]
 

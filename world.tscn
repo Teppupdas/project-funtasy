@@ -13,6 +13,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wse8f"]
+points = PackedVector3Array(0, 1.35, 0, 1, 1.5, -2, 1, 0.1, -2, -1, 0.1, -2, -1, 1.5, -2)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_wse8f"]
 radius = 0.2
 
@@ -100,11 +103,21 @@ floor_constant_speed = true
 floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
 
-[node name="player" parent="World/Player" unique_id=1260467649 instance=ExtResource("3_tlwt5")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player" unique_id=103614961]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_dwbse")
+
+[node name="player" parent="World/Player" unique_id=1260467649 instance=ExtResource("3_tlwt5")]
+
+[node name="damageArea" type="Area3D" parent="World/Player/player" unique_id=1349113692]
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/player/damageArea" unique_id=1909918385]
+shape = SubResource("ConvexPolygonShape3D_wse8f")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="CameraPivot" type="Node3D" parent="World/Player" unique_id=168211943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -116,9 +129,6 @@ spring_length = 4.0
 margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
-
-[node name="CharacterBody3D" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.351246, 4.0677567, -73.03105)
 
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
@@ -137,5 +147,9 @@ shape = SubResource("SphereShape3D_ioo17")
 
 [node name="gothic" parent="World" unique_id=799122922 instance=ExtResource("9_ioo17")]
 
+[node name="Zomb1" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.045)
+
+[connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]

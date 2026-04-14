@@ -47,25 +47,27 @@ extends CharacterBody3D
 
 @onready var camera_pivot = $CameraPivot 
 @onready var model_3d = $player
+@onready var damageArea = $player/damageArea
+
 
 var max_hp: int = 100
 var current_hp: int = 100
 
 
-
+# move
 var move_vector = Vector3.ZERO
 var move_speed = 7.0
 var rotation_speed = 0.15
 var braking_speed = 1.5
 
-
+# jump
 var jump_velocity = 7.0
 var weak_gravity = 13.0
 var strong_gravity = 27.0
 var jump_cut = 2.5
 var coyote_time = 0.1
 var buffer_time = 0.1
-
+# jump runtime
 var coyote_timer = coyote_time
 var buffer_timer = 0
 var current_gravity = weak_gravity
@@ -73,10 +75,17 @@ var current_gravity = weak_gravity
 
 
 
+var damage
+var already_hit_enemies: Array = []  # przeciwnicy juz trafieni
+
+
+
 func _physics_process(delta):
 	movement(delta)
 	jump_and_gravity(delta)
 	move_and_slide() # poruszanie sie to powoduje
+	
+	attack()
 
 
 
@@ -146,3 +155,24 @@ func jump_and_gravity(delta):
 			current_gravity = strong_gravity
 		
 		velocity.y -= current_gravity * delta
+
+func attack():
+	if Input.is_action_just_pressed("attack1"):
+		damage = 5
+		damageArea.monitoring = true
+		await get_tree().create_timer(1).timeout
+		#await get_tree().create_timer(anim_player.get_animation("AtakRekaSzybki1").length).timeout
+		
+		damageArea.monitoring = false
+		already_hit_enemies.clear()
+
+
+
+
+
+
+
+func _on_damage_area_body_entered(body: Node3D) -> void:
+	if body.has_method("take_damage") and not body in already_hit_enemies:
+		body.take_damage(damage)  # wywołanie funkcji przyjmowania dmg u przeciwnika
+		already_hit_enemies.append(body)  # zapamietywanie ze dany przeciwnik juz trafiony

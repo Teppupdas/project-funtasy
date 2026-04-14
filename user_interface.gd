@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 	gpu_label.text = "GPU: %.2f ms" % (1000.0 / Performance.get_monitor(Performance.TIME_FPS))
 	cpu_label.text = "CPU: %.2f ms" % (Performance.get_monitor(Performance.TIME_PROCESS) * 1000)
 
+
+
 	if Input.is_action_just_pressed("pause"):
 		get_tree().quit()
 
