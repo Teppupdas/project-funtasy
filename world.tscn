@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://environment/blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c4jyv6cu5imyo" path="res://environment/pomnik.blend" id="7_70uel"]
 [ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="10_ic0uy"]
@@ -138,6 +139,9 @@ fov = 85.0
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=125726463 instance=ExtResource("5_036b0")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
+
+[node name="pomnik" parent="World/LokacjaBlokowa" unique_id=2017290005 instance=ExtResource("7_70uel")]
+transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 97.02614, 0, -29.216759)
 
 [node name="pentagram" parent="World" unique_id=814588783 instance=ExtResource("8_wse8f")]
 script = ExtResource("9_ic0uy")
