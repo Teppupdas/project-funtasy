@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j27s4rykbu33"
-path="res://.godot/imported/gothic.blend-cc3e0d6a951b9d06144617b8db9460fe.scn"
+uid="uid://1il45ahqege1"
+path="res://.godot/imported/priest.blend-535ae7ee9087f3cb80ba05d45ff13d94.scn"
 
 [deps]
 
-source_file="res://gothic.blend"
-dest_files=["res://.godot/imported/gothic.blend-cc3e0d6a951b9d06144617b8db9460fe.scn"]
+source_file="res://characters/priest/priest.blend"
+dest_files=["res://.godot/imported/priest.blend-535ae7ee9087f3cb80ba05d45ff13d94.scn"]
 
 [params]
 

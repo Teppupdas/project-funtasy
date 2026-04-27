@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://qtpwo3er8mqy"
-path="res://.godot/imported/blok.blend-af3acb601e630487cc6d9a7f4d85963b.scn"
+uid="uid://xa0lrv0ypi1u"
+path="res://.godot/imported/skyeye.blend-9c453dc1aeb46bdbece75e8ef8e30d27.scn"
 
 [deps]
 
-source_file="res://blok.blend"
-dest_files=["res://.godot/imported/blok.blend-af3acb601e630487cc6d9a7f4d85963b.scn"]
+source_file="res://environment/skyeye.blend"
+dest_files=["res://.godot/imported/skyeye.blend-9c453dc1aeb46bdbece75e8ef8e30d27.scn"]
 
 [params]
 

@@ -5,11 +5,14 @@
 [ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_ioo17"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://blok.blend" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://environment/blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://j27s4rykbu33" path="res://gothic.blend" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="10_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://j27s4rykbu33" path="res://world.blend" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://xa0lrv0ypi1u" path="res://environment/skyeye.blend" id="12_k3n1d"]
+[ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="13_2o6r5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
@@ -129,10 +132,11 @@ spring_length = 4.0
 margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
+fov = 85.0
 
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
-[node name="blok" parent="World/LokacjaBlokowa" unique_id=98210566 instance=ExtResource("5_036b0")]
+[node name="blok" parent="World/LokacjaBlokowa" unique_id=125726463 instance=ExtResource("5_036b0")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 86.415, 0, -55.29)
 
 [node name="pentagram" parent="World" unique_id=814588783 instance=ExtResource("8_wse8f")]
@@ -145,10 +149,17 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
 shape = SubResource("SphereShape3D_ioo17")
 
-[node name="gothic" parent="World" unique_id=799122922 instance=ExtResource("9_ioo17")]
-
 [node name="Zomb1" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.045)
+
+[node name="Priest" parent="World" unique_id=813078529 instance=ExtResource("10_ic0uy")]
+transform = Transform3D(-0.6810148, 0, -0.73226964, 0, 1, 0, 0.73226964, 0, -0.6810148, -17.17218, 0, -12.434508)
+
+[node name="world" parent="World" unique_id=1207233264 instance=ExtResource("10_wse8f")]
+
+[node name="skyeye" parent="World" unique_id=1117242616 instance=ExtResource("12_k3n1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
+script = ExtResource("13_2o6r5")
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
