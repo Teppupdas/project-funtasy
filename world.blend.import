@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j27s4rykbu33"
+uid="uid://dd868lnm4auvd"
 path="res://.godot/imported/world.blend-4413a308d318a1e833bb5a6d9fec4318.scn"
 
 [deps]
@@ -37,7 +37,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://syf/Material.tres",
+"use_external/path": "uid://cy7hf6bm5u0bv"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

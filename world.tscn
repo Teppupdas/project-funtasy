@@ -4,16 +4,17 @@
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_ioo17"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="2_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://dqn7slw36us2b" path="res://player.blend" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://qtpwo3er8mqy" path="res://environment/blok.blend" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://maiy06otipmx" path="res://player.blend" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
-[ext_resource type="PackedScene" uid="uid://c4jyv6cu5imyo" path="res://environment/pomnik.blend" id="7_70uel"]
-[ext_resource type="PackedScene" uid="uid://dmnukpinoftbj" path="res://pentagram.blend" id="8_wse8f"]
+[ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/pomnik.blend" id="7_70uel"]
+[ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="10_ic0uy"]
-[ext_resource type="PackedScene" uid="uid://j27s4rykbu33" path="res://world.blend" id="10_wse8f"]
-[ext_resource type="PackedScene" uid="uid://xa0lrv0ypi1u" path="res://environment/skyeye.blend" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://world.blend" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="12_k3n1d"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="13_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="13_hiqwa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
@@ -30,9 +31,6 @@ radius = 1.0
 
 [node name="Save" type="Node" parent="." unique_id=664821633]
 script = ExtResource("1_ioo17")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1389180202]
-transform = Transform3D(0.76604444, -0.49240384, 0.4131759, 0, 0.64278764, 0.76604444, -0.6427876, -0.58682406, 0.4924039, 0, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1181953664]
 script = ExtResource("1_f3sb7")
@@ -68,6 +66,30 @@ offset_right = 333.0
 offset_bottom = 239.0
 theme_override_font_sizes/font_size = 32
 text = "CPU: 2137"
+
+[node name="Triangles_label" type="Label" parent="CanvasLayer" unique_id=1925649837]
+offset_left = 50.0
+offset_top = 210.0
+offset_right = 333.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 32
+text = "Triangles: 2137"
+
+[node name="DrawCalls_label" type="Label" parent="CanvasLayer" unique_id=1855402319]
+offset_left = 50.0
+offset_top = 250.0
+offset_right = 333.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 32
+text = "Draw Calls: 2137"
+
+[node name="Nodes_label" type="Label" parent="CanvasLayer" unique_id=1115211398]
+offset_left = 50.0
+offset_top = 290.0
+offset_right = 333.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 32
+text = "Nodes: 2137"
 
 [node name="HP_label" type="Label" parent="CanvasLayer" unique_id=226080692]
 anchors_preset = 2
@@ -143,7 +165,7 @@ transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.553
 [node name="pomnik" parent="World/LokacjaBlokowa" unique_id=2017290005 instance=ExtResource("7_70uel")]
 transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 97.02614, 0, -29.216759)
 
-[node name="pentagram" parent="World" unique_id=814588783 instance=ExtResource("8_wse8f")]
+[node name="pentagram" parent="World" unique_id=216332244 instance=ExtResource("8_wse8f")]
 script = ExtResource("9_ic0uy")
 
 [node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
@@ -154,16 +176,21 @@ collision_mask = 2
 shape = SubResource("SphereShape3D_ioo17")
 
 [node name="Zomb1" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.045)
+transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.82505435, 92.86293, 0, -23.925222)
 
 [node name="Priest" parent="World" unique_id=813078529 instance=ExtResource("10_ic0uy")]
-transform = Transform3D(-0.6810148, 0, -0.73226964, 0, 1, 0, 0.73226964, 0, -0.6810148, -17.17218, 0, -12.434508)
+transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47222775, 98.257095, 0, -19.60149)
 
 [node name="world" parent="World" unique_id=1207233264 instance=ExtResource("10_wse8f")]
 
-[node name="skyeye" parent="World" unique_id=1117242616 instance=ExtResource("12_k3n1d")]
+[node name="kwiatek" parent="World" unique_id=1511241530 instance=ExtResource("13_hiqwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
+
+[node name="skyeye" parent="World" unique_id=1860670607 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
 script = ExtResource("13_2o6r5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/skyeye" unique_id=1389180202]
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]

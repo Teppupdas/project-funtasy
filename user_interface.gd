@@ -4,6 +4,10 @@ extends CanvasLayer
 @onready var vram_label = $VRAM_label
 @onready var gpu_label = $GPU_label
 @onready var cpu_label = $CPU_label
+@onready var triangles_label = $Triangles_label
+@onready var drawcalls_label = $DrawCalls_label
+@onready var nodes_label = $Nodes_label
+
 
 @onready var hp_label = $HP_label
 
@@ -31,6 +35,10 @@ func _process(delta: float) -> void:
 	vram_label.text = "VRAM: %d MB" % (Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / (1024**2))
 	gpu_label.text = "GPU: %.2f ms" % (1000.0 / Performance.get_monitor(Performance.TIME_FPS))
 	cpu_label.text = "CPU: %.2f ms" % (Performance.get_monitor(Performance.TIME_PROCESS) * 1000)
+	triangles_label.text = "Triangles: " + str(int(Performance.get_monitor(Performance.RENDER_TOTAL_PRIMITIVES_IN_FRAME)))
+	drawcalls_label.text = "Draw Calls: " + str(int(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)))
+	nodes_label.text = "Nodes: " +str(int(Performance.get_monitor(Performance.OBJECT_NODE_COUNT)))
+
 
 
 

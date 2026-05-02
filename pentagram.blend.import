@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dmnukpinoftbj"
+uid="uid://u3yjdnh1l66a"
 path="res://.godot/imported/pentagram.blend-ab1f9dc2ec5c72082e1b8d8039f2ac12.scn"
 
 [deps]
@@ -37,7 +37,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://syf/Material.tres",
+"use_external/path": "uid://cy7hf6bm5u0bv"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
