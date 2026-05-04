@@ -183,10 +183,10 @@ transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47
 
 [node name="world" parent="World" unique_id=1207233264 instance=ExtResource("10_wse8f")]
 
-[node name="kwiatek" parent="World" unique_id=1511241530 instance=ExtResource("13_hiqwa")]
+[node name="kwiatek" parent="World" unique_id=1640160316 instance=ExtResource("13_hiqwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
 
-[node name="skyeye" parent="World" unique_id=1860670607 instance=ExtResource("12_k3n1d")]
+[node name="skyeye" parent="World" unique_id=495436368 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
 script = ExtResource("13_2o6r5")
 
