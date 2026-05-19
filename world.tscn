@@ -181,7 +181,7 @@ transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.8250
 [node name="Priest" parent="World" unique_id=813078529 instance=ExtResource("10_ic0uy")]
 transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47222775, 98.257095, 0, -19.60149)
 
-[node name="world" parent="World" unique_id=1589169756 instance=ExtResource("10_wse8f")]
+[node name="world" parent="World" unique_id=2095053249 instance=ExtResource("10_wse8f")]
 
 [node name="kwiatek" parent="World" unique_id=1613215920 instance=ExtResource("13_hiqwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
