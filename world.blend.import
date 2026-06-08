@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://syf/Material.tres",
 "use_external/path": "uid://cy7hf6bm5u0bv"
 }
+},
+"nodes": {
+"PATH:platforma": {
+"import/skip_import": true
+}
 }
 }
 blender/nodes/visible=0

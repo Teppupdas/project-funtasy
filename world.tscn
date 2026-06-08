@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="12_k3n1d"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="13_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://5woqppy6ym6t" path="res://environment/platforma_piwniczna.tscn" id="16_udxuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 
@@ -181,7 +182,7 @@ transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.8250
 [node name="Priest" parent="World" unique_id=813078529 instance=ExtResource("10_ic0uy")]
 transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47222775, 98.257095, 0, -19.60149)
 
-[node name="world" parent="World" unique_id=1534887941 instance=ExtResource("10_wse8f")]
+[node name="world" parent="World" unique_id=2076771031 instance=ExtResource("10_wse8f")]
 
 [node name="kwiatek" parent="World" unique_id=1613215920 instance=ExtResource("13_hiqwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
@@ -191,6 +192,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
 script = ExtResource("13_2o6r5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/skyeye" unique_id=1389180202]
+
+[node name="platformaPiwniczna" parent="World" unique_id=1813360382 instance=ExtResource("16_udxuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6164246, 0.62612724, 0)
+
+[node name="platformaPiwniczna2" parent="World" unique_id=474880109 instance=ExtResource("16_udxuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8795037, 0.6065669, 0)
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]

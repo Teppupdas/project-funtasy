@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccggf66d3xip1"]
 
-[ext_resource type="PackedScene" uid="uid://1il45ahqege1" path="res://characters/priest/priest.blend" id="1_5dscx"]
+[ext_resource type="PackedScene" uid="uid://drlea5pwb0fsk" path="res://characters/priest/priest.blend" id="1_5dscx"]
 
 [node name="Priest" type="CharacterBody3D" unique_id=813078529]
 
