@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://5woqppy6ym6t" path="res://environment/platforma_piwniczna.tscn" id="16_udxuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
+radius = 0.4
+height = 1.6
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wse8f"]
 points = PackedVector3Array(0, 1.35, 0, 1, 1.5, -2, 1, 0.1, -2, -1, 0.1, -2, -1, 1.5, -2)
@@ -133,10 +135,10 @@ floor_snap_length = 0.3
 script = ExtResource("2_fj7yv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player" unique_id=103614961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_dwbse")
 
-[node name="player" parent="World/Player" unique_id=1260467649 instance=ExtResource("3_tlwt5")]
+[node name="player" parent="World/Player" unique_id=1937838082 instance=ExtResource("3_tlwt5")]
 
 [node name="damageArea" type="Area3D" parent="World/Player/player" unique_id=1349113692]
 collision_layer = 0
@@ -149,7 +151,7 @@ shape = SubResource("ConvexPolygonShape3D_wse8f")
 debug_color = Color(1, 0, 0, 1)
 
 [node name="CameraPivot" type="Node3D" parent="World/Player" unique_id=168211943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 script = ExtResource("1_aqk2v")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="World/Player/CameraPivot" unique_id=1578143808]
