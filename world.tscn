@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/blok.blend" id="5_036b0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/pomnik.blend" id="7_70uel"]
+[ext_resource type="Script" uid="uid://cejkwfn2a3ebp" path="res://zagwozdka.gd" id="8_udxuc"]
 [ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://pentagram.blend" id="8_wse8f"]
 [ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="10_ic0uy"]
+[ext_resource type="Script" uid="uid://dfsvy6a4afi4q" path="res://environment/ruch_platform.gd" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://world.blend" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="12_k3n1d"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="13_2o6r5"]
@@ -158,6 +160,8 @@ margin = 0.1
 [node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
 fov = 85.0
 
+[node name="LokacjaSamochodowa" type="Node" parent="World" unique_id=1050578911]
+
 [node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
 
 [node name="blok" parent="World/LokacjaBlokowa" unique_id=125726463 instance=ExtResource("5_036b0")]
@@ -165,6 +169,19 @@ transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.553
 
 [node name="pomnik" parent="World/LokacjaBlokowa" unique_id=2017290005 instance=ExtResource("7_70uel")]
 transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 97.02614, 0, -29.216759)
+
+[node name="LokacjaPiwniczna" type="Node" parent="World" unique_id=1797995699]
+script = ExtResource("8_udxuc")
+
+[node name="platformaPiwniczna1" parent="World/LokacjaPiwniczna" unique_id=1813360382 instance=ExtResource("16_udxuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185, -5, -14)
+script = ExtResource("10_ikiii")
+start_pos = Vector3(185, -5, -14)
+end_pos = Vector3(190, -5, -14)
+time = 3.0
+
+[node name="platformaPiwniczna2" parent="World/LokacjaPiwniczna" unique_id=474880109 instance=ExtResource("16_udxuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.26726, -5.717072, -15.91173)
 
 [node name="pentagram" parent="World" unique_id=216332244 instance=ExtResource("8_wse8f")]
 script = ExtResource("9_ic0uy")
@@ -192,12 +209,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
 script = ExtResource("13_2o6r5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/skyeye" unique_id=1389180202]
-
-[node name="platformaPiwniczna" parent="World" unique_id=1813360382 instance=ExtResource("16_udxuc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6164246, 0.62612724, 0)
-
-[node name="platformaPiwniczna2" parent="World" unique_id=474880109 instance=ExtResource("16_udxuc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8795037, 0.6065669, 0)
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]

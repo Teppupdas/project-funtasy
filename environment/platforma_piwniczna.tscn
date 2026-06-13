@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://5woqppy6ym6t"]
 
-[ext_resource type="Script" uid="uid://3rhrsq1tvdl4" path="res://world.gd" id="1_fao62"]
 [ext_resource type="Material" uid="uid://cy7hf6bm5u0bv" path="res://syf/Material.tres" id="1_tck42"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vdb6v"]
@@ -39,7 +38,6 @@ shadow_mesh = SubResource("ArrayMesh_vdb6v")
 size = Vector3(2, 0.8, 2)
 
 [node name="platformaPiwniczna" type="AnimatableBody3D" unique_id=1813360382]
-script = ExtResource("1_fao62")
 
 [node name="platforma" type="MeshInstance3D" parent="." unique_id=1079597936]
 mesh = SubResource("ArrayMesh_ccw4n")
