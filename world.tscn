@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="6_wse8f"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/pomnik.blend" id="7_70uel"]
 [ext_resource type="Script" uid="uid://cejkwfn2a3ebp" path="res://zagwozdka.gd" id="8_udxuc"]
-[ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://pentagram.blend" id="8_wse8f"]
-[ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="9_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="10_ic0uy"]
 [ext_resource type="Script" uid="uid://dfsvy6a4afi4q" path="res://environment/ruch_platform.gd" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://world.blend" id="10_wse8f"]
@@ -18,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="13_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="13_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://5woqppy6ym6t" path="res://environment/platforma_piwniczna.tscn" id="16_udxuc"]
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="17_udxuc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 radius = 0.4
@@ -28,9 +27,6 @@ points = PackedVector3Array(0, 1.35, 0, 1, 1.5, -2, 1, 0.1, -2, -1, 0.1, -2, -1,
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wse8f"]
 radius = 0.2
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
-radius = 1.0
 
 [node name="Root" type="Node" unique_id=1127780170]
 
@@ -185,23 +181,13 @@ time = 3.0
 [node name="platformaPiwniczna2" parent="World/LokacjaPiwniczna" unique_id=474880109 instance=ExtResource("16_udxuc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.26726, -5.717072, -15.91173)
 
-[node name="pentagram" parent="World" unique_id=216332244 instance=ExtResource("8_wse8f")]
-script = ExtResource("9_ic0uy")
-
-[node name="Area3D" type="Area3D" parent="World/pentagram" unique_id=1450265557]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/pentagram/Area3D" unique_id=660921077]
-shape = SubResource("SphereShape3D_ioo17")
-
 [node name="Zomb1" parent="World" unique_id=1318007586 instance=ExtResource("6_wse8f")]
 transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.82505435, 92.86293, 0, -23.925222)
 
 [node name="Priest" parent="World" unique_id=813078529 instance=ExtResource("10_ic0uy")]
 transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47222775, 98.257095, 0, -19.60149)
 
-[node name="world" parent="World" unique_id=2076771031 instance=ExtResource("10_wse8f")]
+[node name="world" parent="World" unique_id=298165155 instance=ExtResource("10_wse8f")]
 
 [node name="kwiatek" parent="World" unique_id=1613215920 instance=ExtResource("13_hiqwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
@@ -212,6 +198,9 @@ script = ExtResource("13_2o6r5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/skyeye" unique_id=1389180202]
 
+[node name="pentagram1" parent="World" unique_id=1847881706 instance=ExtResource("17_udxuc")]
+
+[node name="pentagram2" parent="World" unique_id=174690318 instance=ExtResource("17_udxuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.96136, 0, -22.320843)
+
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
-[connection signal="body_entered" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="World/pentagram/Area3D" to="World/pentagram" method="_on_area_3d_body_exited"]

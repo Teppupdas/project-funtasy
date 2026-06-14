@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://q5iikubtgdxo"]
+
+[ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="1_bywcf"]
+[ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://pentagram.blend" id="2_4tguq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
+radius = 1.0
+
+[node name="pentagram" type="Node3D" unique_id=1847881706]
+script = ExtResource("1_bywcf")
+
+[node name="pentagram" parent="." unique_id=216332244 instance=ExtResource("2_4tguq")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=236692016]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=456934410]
+shape = SubResource("SphereShape3D_ioo17")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
