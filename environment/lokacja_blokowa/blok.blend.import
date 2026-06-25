@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://mt1ogm57l00d"
-path="res://.godot/imported/pomnik.blend-79b0d48bae5bea371fffcd429e4f4211.scn"
+uid="uid://c28m8if8hptf5"
+path="res://.godot/imported/blok.blend-32e8a27cd49b0d6322b8fa0a5436897c.scn"
 
 [deps]
 
-source_file="res://environment/pomnik.blend"
-dest_files=["res://.godot/imported/pomnik.blend-79b0d48bae5bea371fffcd429e4f4211.scn"]
+source_file="res://environment/lokacja_blokowa/blok.blend"
+dest_files=["res://.godot/imported/blok.blend-32e8a27cd49b0d6322b8fa0a5436897c.scn"]
 
 [params]
 

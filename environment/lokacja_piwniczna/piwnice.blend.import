@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c28m8if8hptf5"
-path="res://.godot/imported/blok.blend-a17274dfcd3eb4a00730b2400abc3f26.scn"
+uid="uid://wcofqrc1hn1l"
+path="res://.godot/imported/piwnice.blend-0c15160c6030d68c5b6028fb7a175b54.scn"
 
 [deps]
 
-source_file="res://environment/blok.blend"
-dest_files=["res://.godot/imported/blok.blend-a17274dfcd3eb4a00730b2400abc3f26.scn"]
+source_file="res://environment/lokacja_piwniczna/piwnice.blend"
+dest_files=["res://.godot/imported/piwnice.blend-0c15160c6030d68c5b6028fb7a175b54.scn"]
 
 [params]
 
@@ -43,6 +43,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://syf/Material.tres",
 "use_external/path": "uid://cy7hf6bm5u0bv"
+}
+},
+"nodes": {
+"PATH:platforma": {
+"import/skip_import": true
 }
 }
 }

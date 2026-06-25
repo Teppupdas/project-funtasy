@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dd868lnm4auvd"
-path="res://.godot/imported/world.blend-4413a308d318a1e833bb5a6d9fec4318.scn"
+uid="uid://mt1ogm57l00d"
+path="res://.godot/imported/pomnik.blend-746818dcae0fb72d9a41d764cab6d1c3.scn"
 
 [deps]
 
-source_file="res://world.blend"
-dest_files=["res://.godot/imported/world.blend-4413a308d318a1e833bb5a6d9fec4318.scn"]
+source_file="res://environment/lokacja_blokowa/pomnik.blend"
+dest_files=["res://.godot/imported/pomnik.blend-746818dcae0fb72d9a41d764cab6d1c3.scn"]
 
 [params]
 
@@ -43,11 +43,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://syf/Material.tres",
 "use_external/path": "uid://cy7hf6bm5u0bv"
-}
-},
-"nodes": {
-"PATH:platforma": {
-"import/skip_import": true
 }
 }
 }
