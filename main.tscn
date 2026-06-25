@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://environment/lokacja_blokowa/plane.blend" id="6_ryguw"]
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="7_d13ii"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="8_1u8w0"]
-[ext_resource type="PackedScene" uid="uid://5woqppy6ym6t" path="res://environment/lokacja_piwniczna/platforma_piwniczna.tscn" id="10_lswn8"]
-[ext_resource type="Script" uid="uid://dfsvy6a4afi4q" path="res://environment/ruch_platform.gd" id="11_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="12_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="13_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
@@ -179,16 +177,6 @@ transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47
 
 [node name="Zomb1" parent="World/unkategorizetJet" unique_id=1318007586 instance=ExtResource("12_xuqvo")]
 transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.82505435, 72.15748, 0, -23.925222)
-
-[node name="platformaPiwniczna1" parent="World/unkategorizetJet" unique_id=1813360382 instance=ExtResource("10_lswn8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.337616, -0.2923584, -14)
-script = ExtResource("11_a6jrf")
-start_pos = Vector3(185, -5, -14)
-end_pos = Vector3(190, -5, -14)
-time = 3.0
-
-[node name="platformaPiwniczna2" parent="World/unkategorizetJet" unique_id=474880109 instance=ExtResource("10_lswn8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.60487, -1.0094304, -15.91173)
 
 [node name="skyeye" parent="World/unkategorizetJet" unique_id=495436368 instance=ExtResource("15_seu75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)

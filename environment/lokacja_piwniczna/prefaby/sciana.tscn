@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cq2uolhil73n8"]
+
+[ext_resource type="ArrayMesh" uid="uid://oxlk4kdsorp4" path="res://environment/lokacja_piwniczna/zasoby/sciana.res" id="1_b2m5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8sp5"]
+size = Vector3(0.4, 4, 0.1)
+
+[node name="sciana" type="StaticBody3D" unique_id=1805842447]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=93279235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 2, -0.05)
+shape = SubResource("BoxShape3D_w8sp5")
+
+[node name="Sciana" type="MeshInstance3D" parent="." unique_id=901388771]
+mesh = ExtResource("1_b2m5o")

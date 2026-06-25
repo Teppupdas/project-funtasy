@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://du6xgvkhxrs1h"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2gmtyvewybia" path="res://environment/lokacja_piwniczna/zasoby/drzwi.res" id="1_tu1ep"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8sp5"]
+size = Vector3(2.4, 4, 0.1)
+
+[node name="drzwi" type="StaticBody3D" unique_id=1805842447]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=93279235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2, -0.05)
+shape = SubResource("BoxShape3D_w8sp5")
+
+[node name="Drzwi" type="MeshInstance3D" parent="." unique_id=901388771]
+mesh = ExtResource("1_tu1ep")
