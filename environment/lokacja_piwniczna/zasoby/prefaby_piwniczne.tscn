@@ -10,13 +10,16 @@
 size = Vector3(2.4, 4, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ldn0"]
-size = Vector3(0.4, 0.01, 0.4)
+size = Vector3(0.8, 0.01, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lip73"]
-size = Vector3(2.4, 4, 0.1)
+size = Vector3(0.4, 4, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ih3gh"]
+size = Vector3(1.6, 0.8, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gghjg"]
-size = Vector3(3.77, 0.01, 2.2)
+size = Vector3(0.943, 0.01, 2.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5ahv"]
 size = Vector3(0.4, 4, 0.1)
@@ -24,6 +27,7 @@ size = Vector3(0.4, 4, 0.1)
 [node name="Node" type="Node" unique_id=981080251]
 
 [node name="Drzwi" type="MeshInstance3D" parent="." unique_id=901388771]
+visible = false
 mesh = ExtResource("1_ih3gh")
 
 [node name="drzwi" type="StaticBody3D" parent="Drzwi" unique_id=1805842447]
@@ -33,12 +37,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2, -0.05)
 shape = SubResource("BoxShape3D_w8sp5")
 
 [node name="Podloga1" type="MeshInstance3D" parent="." unique_id=1083442346]
+visible = false
 mesh = ExtResource("2_6ism4")
 
 [node name="podloga1" type="StaticBody3D" parent="Podloga1" unique_id=1029695168]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Podloga1/podloga1" unique_id=563687450]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.005, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005, 0)
 shape = SubResource("BoxShape3D_6ldn0")
 
 [node name="Przejscie" type="MeshInstance3D" parent="." unique_id=829371682]
@@ -47,19 +52,29 @@ mesh = ExtResource("3_sdrvd")
 [node name="przejscie" type="StaticBody3D" parent="Przejscie" unique_id=2043690216]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Przejscie/przejscie" unique_id=370022524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2, -0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 2, -0.1)
 shape = SubResource("BoxShape3D_lip73")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Przejscie/przejscie" unique_id=579245904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 2, -0.1)
+shape = SubResource("BoxShape3D_lip73")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Przejscie/przejscie" unique_id=2045636770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 3.6, -0.1)
+shape = SubResource("BoxShape3D_ih3gh")
+
 [node name="Schody" type="MeshInstance3D" parent="." unique_id=1849650894]
+visible = false
 mesh = ExtResource("4_s5nmx")
 
 [node name="schody" type="StaticBody3D" parent="Schody" unique_id=1339687602]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Schody/schody" unique_id=963004677]
-transform = Transform3D(0.8480481, 0.52991927, 0, -0.52991927, 0.8480481, 0, 0, 0, 1, 1.6, -1, -1.1)
+transform = Transform3D(0.8480481, 0.52991927, 0, -0.52991927, 0.8480481, 0, 0, 0, 1, 0.4, -0.25, -1.2)
 shape = SubResource("BoxShape3D_gghjg")
 
 [node name="Sciana" type="MeshInstance3D" parent="." unique_id=1664344059]
+visible = false
 mesh = ExtResource("5_7n4rt")
 
 [node name="sciana" type="StaticBody3D" parent="Sciana" unique_id=403195488]
