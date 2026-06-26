@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="13_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
+[ext_resource type="PackedScene" uid="uid://crdxyow0fwmtt" path="res://environment/lokacja_piwniczna/lokacje/cimury.tscn" id="15_vivmo"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
 [ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="17_jq2sk"]
 
@@ -188,5 +189,8 @@ script = ExtResource("16_htxhm")
 
 [node name="pentagram2" parent="World" unique_id=174690318 instance=ExtResource("17_jq2sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.21208, 0, 5.926445)
+
+[node name="Cimury" parent="World" unique_id=767463105 instance=ExtResource("15_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.086193, 0, 0)
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]

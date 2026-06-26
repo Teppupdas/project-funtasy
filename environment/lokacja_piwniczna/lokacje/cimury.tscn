@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://crdxyow0fwmtt"]
+
+[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_c1f81"]
+
+[node name="Cimury" type="Node3D" unique_id=767463105]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=403402068]
+mesh_library = ExtResource("1_c1f81")
