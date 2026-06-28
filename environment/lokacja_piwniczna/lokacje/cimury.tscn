@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6atf"]
 size = Vector3(7.6703687, 2, 2)
 
-[node name="Cimury" type="Node3D" unique_id=767463105]
+[node name="cimury" type="Node3D" unique_id=767463105]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=403402068]
 mesh_library = ExtResource("1_c1f81")
@@ -22,7 +22,7 @@ metadata/_editor_floor_ = Vector3(0, -4, 0)
 collision_layer = 8
 collision_mask = 0
 metadata/add_location = {
-"krzyrzy": Vector3(2, 3, 4)
+"krzyrzy": Vector3(31.6, -6, 27.6)
 }
 metadata/remove_location = ["podworko"]
 

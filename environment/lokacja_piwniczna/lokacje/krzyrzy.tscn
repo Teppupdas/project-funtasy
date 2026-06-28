@@ -2,7 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_4yil7"]
 
-[node name="Krzyrzy" type="Node3D" unique_id=1964241617]
+[node name="krzyrzy" type="Node3D" unique_id=1964241617]
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1881792032]
 mesh_library = ExtResource("1_4yil7")

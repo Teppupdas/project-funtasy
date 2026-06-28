@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://g0cbjac744xs"]
+
+[ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://environment/lokacja_blokowa/plane.blend" id="1_1jfg5"]
+
+[node name="podworko" type="Node3D" unique_id=1180028596]
+
+[node name="plane" parent="." unique_id=1671843141 instance=ExtResource("1_1jfg5")]

@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="3_cegan"]
 [ext_resource type="PackedScene" uid="uid://maiy06otipmx" path="res://player.blend" id="4_82xsv"]
 [ext_resource type="Script" uid="uid://cu518ew5fj0ua" path="res://camera.gd" id="5_getpj"]
-[ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://environment/lokacja_blokowa/plane.blend" id="6_ryguw"]
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="7_d13ii"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="8_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="12_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="13_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
+[ext_resource type="PackedScene" uid="uid://g0cbjac744xs" path="res://environment/lokacja_blokowa/podworko.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
 [ext_resource type="PackedScene" uid="uid://crdxyow0fwmtt" path="res://environment/lokacja_piwniczna/lokacje/cimury.tscn" id="15_vivmo"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
@@ -166,19 +166,10 @@ margin = 0.1
 [node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
 fov = 85.0
 
-[node name="LokacjaSamochodowa" type="Node" parent="World" unique_id=1050578911]
-
-[node name="LokacjaBlokowa" type="Node" parent="World" unique_id=1989164256]
-
-[node name="plane" parent="World/LokacjaBlokowa" unique_id=1671843141 instance=ExtResource("6_ryguw")]
-
-[node name="blok" parent="World/LokacjaBlokowa" unique_id=38042711 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 71.58717, 0, -55.29)
-
-[node name="pomnik" parent="World/LokacjaBlokowa" unique_id=1388138024 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 76.9092, 0, -29.216759)
-
 [node name="unkategorizetJet" type="Node" parent="World" unique_id=1238525377]
+
+[node name="pomnik" parent="World/unkategorizetJet" unique_id=1388138024 instance=ExtResource("8_1u8w0")]
+transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 76.9092, 0, -29.216759)
 
 [node name="kwiatek" parent="World/unkategorizetJet" unique_id=1613215920 instance=ExtResource("14_kq58d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
@@ -195,12 +186,17 @@ script = ExtResource("16_htxhm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/unkategorizetJet/skyeye" unique_id=1389180202]
 
+[node name="blok" parent="World/unkategorizetJet" unique_id=38042711 instance=ExtResource("7_d13ii")]
+transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 71.58717, 0, -55.29)
+
 [node name="pentagram1" parent="World" unique_id=1847881706 instance=ExtResource("17_jq2sk")]
 
 [node name="pentagram2" parent="World" unique_id=174690318 instance=ExtResource("17_jq2sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.21208, 0, 5.926445)
 
-[node name="Cimury" parent="World" unique_id=767463105 instance=ExtResource("15_vivmo")]
+[node name="podworko" parent="World" unique_id=1180028596 instance=ExtResource("15_2cqfq")]
+
+[node name="cimury" parent="World" unique_id=767463105 instance=ExtResource("15_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
