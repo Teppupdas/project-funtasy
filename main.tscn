@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_yaehf"]
 [ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="2_074og"]
+[ext_resource type="Script" uid="uid://c4p26mt4b2v6k" path="res://location_manager.gd" id="3_2cqfq"]
 [ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="3_cegan"]
 [ext_resource type="PackedScene" uid="uid://maiy06otipmx" path="res://player.blend" id="4_82xsv"]
 [ext_resource type="Script" uid="uid://cu518ew5fj0ua" path="res://camera.gd" id="5_getpj"]
@@ -119,6 +120,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="World" type="Node" parent="." unique_id=1254761138]
+script = ExtResource("3_2cqfq")
 
 [node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
 physics_interpolation_mode = 1
@@ -143,6 +145,14 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/player/damageArea" unique_id=1909918385]
 shape = SubResource("ConvexPolygonShape3D_wse8f")
 debug_color = Color(1, 0, 0, 1)
+
+[node name="TriggerDetector" type="Area3D" parent="World/Player/player" unique_id=1818885972]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/player/TriggerDetector" unique_id=756378901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_dwbse")
 
 [node name="CameraPivot" type="Node3D" parent="World/Player" unique_id=168211943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
@@ -194,3 +204,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.21208, 0, 5.926445)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
+[connection signal="area_entered" from="World/Player/player/TriggerDetector" to="World" method="_on_player_trigger_detector_area_entered"]
