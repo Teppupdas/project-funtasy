@@ -2,8 +2,13 @@ extends Node
 
 # LOKACJE:
 var LOCATION_REGISTRY = {
+	#bloki
+	"podworko": "uid://g0cbjac744xs",
+	
+	#piwnice
 	"cimury": "uid://crdxyow0fwmtt",
-	"krzyrzy": "uid://b44lh2cfb7oni"
+	"krzyrzy": "uid://b44lh2cfb7oni",
+	"palac": "uid://dye5fi6qua0ei"
 }
 
 
