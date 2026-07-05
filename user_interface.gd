@@ -8,6 +8,12 @@ extends CanvasLayer
 @onready var drawcalls_label = $DrawCalls_label
 @onready var nodes_label = $Nodes_label
 
+@onready var locations_container = $LoadedLocations
+@onready var world_locations = $"../World/Locations"
+
+
+
+
 
 @onready var hp_label = $HP_label
 
@@ -31,6 +37,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	refresh_locations_display(world_locations)
+	
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	vram_label.text = "VRAM: %d MB" % (Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / (1024**2))
 	gpu_label.text = "GPU: %.2f ms" % (1000.0 / Performance.get_monitor(Performance.TIME_FPS))
@@ -72,3 +80,25 @@ func show_interaction_prompt(interaction_object: Node3D, interaction):
 func hide_interaction_prompt():
 	interaction_prompt_active = false
 	interaction_prompt_label.hide()
+
+
+
+
+
+
+
+
+
+
+func refresh_locations_display(world_locations):
+	
+	for child in locations_container.get_children():
+		child.queue_free()
+	
+	for child in world_locations.get_children():
+		
+		var new_label = Label.new()
+		new_label.text = child.name
+		new_label.add_theme_font_size_override("font_size", 24)
+		
+		locations_container.add_child(new_label)

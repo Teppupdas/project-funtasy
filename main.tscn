@@ -119,8 +119,17 @@ text = "Interaction Prompt"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LoadedLocations" type="VBoxContainer" parent="CanvasLayer" unique_id=651943680]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 20.0
+grow_vertical = 2
+
 [node name="World" type="Node" parent="." unique_id=1254761138]
-script = ExtResource("3_2cqfq")
 
 [node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
 physics_interpolation_mode = 1
@@ -194,10 +203,13 @@ transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.553
 [node name="pentagram2" parent="World" unique_id=174690318 instance=ExtResource("17_jq2sk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.21208, 0, 5.926445)
 
-[node name="podworko" parent="World" unique_id=1180028596 instance=ExtResource("15_2cqfq")]
+[node name="Locations" type="Node" parent="World" unique_id=1493617716]
+script = ExtResource("3_2cqfq")
 
-[node name="cimury" parent="World" unique_id=767463105 instance=ExtResource("15_vivmo")]
+[node name="cimury" parent="World/Locations" unique_id=767463105 instance=ExtResource("15_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
 
+[node name="podworko" parent="World/Locations" unique_id=1180028596 instance=ExtResource("15_2cqfq")]
+
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
-[connection signal="area_entered" from="World/Player/player/TriggerDetector" to="World" method="_on_player_trigger_detector_area_entered"]
+[connection signal="area_entered" from="World/Player/player/TriggerDetector" to="World/Locations" method="_on_player_trigger_detector_area_entered"]
