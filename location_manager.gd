@@ -8,6 +8,7 @@ var LOCATION_REGISTRY = {
 	#piwnice
 	"cimury": "uid://crdxyow0fwmtt",
 	"krzyrzy": "uid://b44lh2cfb7oni",
+	"zakret": "uid://b8gj4744sjgrk",
 	"dluga": "uid://besbvcer43yak",
 	"palac": "uid://dye5fi6qua0ei"
 }
