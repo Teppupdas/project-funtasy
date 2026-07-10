@@ -1,7 +1,27 @@
 [gd_scene format=3 uid="uid://g0cbjac744xs"]
 
 [ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://environment/lokacja_blokowa/plane.blend" id="1_1jfg5"]
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="2_056hv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1jfg5"]
+size = Vector3(7.028342, 2, 109.244026)
 
 [node name="podworko" type="Node3D" unique_id=1180028596]
 
+[node name="Pentagram" parent="." unique_id=1847881706 instance=ExtResource("2_056hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.8706, 0, 0)
+
 [node name="plane" parent="." unique_id=1671843141 instance=ExtResource("1_1jfg5")]
+
+[node name="PodworkoToCimury" type="Area3D" parent="." unique_id=1333407432]
+collision_layer = 8
+collision_mask = 0
+metadata/add_location = {
+"cimury": Vector3(120, 0, 0)
+}
+metadata/remove_location = []
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PodworkoToCimury" unique_id=1565217434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.835785, -0.6224699, 3.2291126)
+shape = SubResource("BoxShape3D_1jfg5")
+debug_color = Color(0.5846649, 0.22155255, 0.7187457, 0.41960785)

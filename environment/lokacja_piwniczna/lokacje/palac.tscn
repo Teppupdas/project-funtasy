@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dye5fi6qua0ei"]
 
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="1_u3c26"]
 [ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_ywa1a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywa1a"]
@@ -9,6 +10,9 @@ size = Vector3(2.029058, 2, 3.0127258)
 size = Vector3(2.029058, 2, 3.0127258)
 
 [node name="palac" type="Node3D" unique_id=1536448364]
+
+[node name="Pentagram" parent="." unique_id=1847881706 instance=ExtResource("1_u3c26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=2042780383]
 mesh_library = ExtResource("1_ywa1a")

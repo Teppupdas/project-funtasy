@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
 radius = 1.0
 
-[node name="pentagram" type="Node3D" unique_id=1847881706]
+[node name="Pentagram" type="Node3D" unique_id=1847881706]
 script = ExtResource("1_bywcf")
 
 [node name="pentagram" parent="." unique_id=216332244 instance=ExtResource("2_4tguq")]

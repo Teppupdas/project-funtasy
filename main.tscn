@@ -11,11 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="12_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="13_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
-[ext_resource type="PackedScene" uid="uid://g0cbjac744xs" path="res://environment/lokacja_blokowa/podworko.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
-[ext_resource type="PackedScene" uid="uid://crdxyow0fwmtt" path="res://environment/lokacja_piwniczna/lokacje/cimury.tscn" id="15_vivmo"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
-[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="17_jq2sk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
 radius = 0.4
@@ -198,18 +195,8 @@ script = ExtResource("16_htxhm")
 [node name="blok" parent="World/unkategorizetJet" unique_id=38042711 instance=ExtResource("7_d13ii")]
 transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 71.58717, 0, -55.29)
 
-[node name="pentagram1" parent="World" unique_id=1847881706 instance=ExtResource("17_jq2sk")]
-
-[node name="pentagram2" parent="World" unique_id=174690318 instance=ExtResource("17_jq2sk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.21208, 0, 5.926445)
-
 [node name="Locations" type="Node" parent="World" unique_id=1493617716]
 script = ExtResource("3_2cqfq")
-
-[node name="cimury" parent="World/Locations" unique_id=767463105 instance=ExtResource("15_vivmo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
-
-[node name="podworko" parent="World/Locations" unique_id=1180028596 instance=ExtResource("15_2cqfq")]
 
 [connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
 [connection signal="area_entered" from="World/Player/player/TriggerDetector" to="World/Locations" method="_on_player_trigger_detector_area_entered"]

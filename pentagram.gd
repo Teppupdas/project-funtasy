@@ -1,16 +1,24 @@
 extends Node3D
 
 
-@onready var save_node = $"../../Save"
-@onready var ui = $"../../CanvasLayer"
+@onready var save_node = $"../../../../Save"
+@onready var ui = $"../../../../CanvasLayer"
+@onready var player = $"../../../Player"
 
 
 
 
 func handle_interaction():
 	ui.hide_interaction_prompt()
-	save_node.set_pentagram(self) #wysyla do save node ze pentagram chce zmienic
-	save_node.save_game()
+	
+	#zapis
+	var current_location_uid = ResourceUID.id_to_text(ResourceLoader.get_resource_uid(owner.scene_file_path))
+	save_node.save_game(current_location_uid)
+	
+	#leczenie
+	player.current_hp = player.max_hp
+	ui.set_hp(player.max_hp, player.max_hp)
+
 
 
 
