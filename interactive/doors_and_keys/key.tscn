@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c8sevgjrv6p4v"]
+
+[ext_resource type="PackedScene" uid="uid://cqlihlh4mino2" path="res://interactive/doors_and_keys/key.blend" id="1_aw2fo"]
+[ext_resource type="Script" uid="uid://dbs14nbtct6a3" path="res://interactive/doors_and_keys/key.gd" id="1_qx418"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d6atf"]
+radius = 1.0
+
+[node name="Key" type="Node3D" unique_id=1165581151]
+script = ExtResource("1_qx418")
+
+[node name="key" parent="." unique_id=491783102 instance=ExtResource("1_aw2fo")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1005613408]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1045300356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_d6atf")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

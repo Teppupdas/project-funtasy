@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dye5fi6qua0ei"]
 
-[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="1_u3c26"]
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://interactive/pentagram/pentagram.tscn" id="1_u3c26"]
 [ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_ywa1a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywa1a"]

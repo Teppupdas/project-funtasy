@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://crdxyow0fwmtt"]
 
 [ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_c1f81"]
+[ext_resource type="PackedScene" uid="uid://d1hbipdw47e5" path="res://interactive/doors_and_keys/door.tscn" id="2_xnhw5"]
+[ext_resource type="PackedScene" uid="uid://c8sevgjrv6p4v" path="res://interactive/doors_and_keys/key.tscn" id="3_6gr7x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6atf"]
 size = Vector3(7.6703687, 2, 2)
@@ -62,3 +64,12 @@ metadata/remove_location = ["krzyrzy", "palac"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.470536, -0.6224699, 4.1764197)
 shape = SubResource("BoxShape3D_pvdyl")
 debug_color = Color(0.5846649, 0.22155255, 0.7187457, 0.41960785)
+
+[node name="Door" parent="." unique_id=568206748 instance=ExtResource("2_xnhw5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 2, 0, -1, 0, -4.371139e-08, 19.607698, -0.38937926, 4.6739726)
+key = "cimur"
+
+[node name="Key" parent="." unique_id=1165581151 node_paths=PackedStringArray("door") instance=ExtResource("3_6gr7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.446205, -2, 2.2171345)
+key = "cimur"
+door = NodePath("../Door")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://g0cbjac744xs"]
 
 [ext_resource type="PackedScene" uid="uid://dd868lnm4auvd" path="res://environment/lokacja_blokowa/plane.blend" id="1_1jfg5"]
-[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://pentagram.tscn" id="2_056hv"]
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://interactive/pentagram/pentagram.tscn" id="2_056hv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jfg5"]
 size = Vector3(7.028342, 2, 109.244026)

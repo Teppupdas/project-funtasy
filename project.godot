@@ -31,7 +31,7 @@ scene={
 "Material": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://syf/Material.tres",
-"use_external/path": "uid://d0siscgf4ix5b"
+"use_external/path": "uid://cy7hf6bm5u0bv"
 }
 }
 },
@@ -168,4 +168,5 @@ attack1={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+anti_aliasing/quality/msaa_3d=2
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

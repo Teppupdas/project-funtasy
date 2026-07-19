@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://q5iikubtgdxo"]
 
-[ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://pentagram.gd" id="1_bywcf"]
-[ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://pentagram.blend" id="2_4tguq"]
+[ext_resource type="Script" uid="uid://brpjeqrmb873k" path="res://interactive/pentagram/pentagram.gd" id="1_bywcf"]
+[ext_resource type="PackedScene" uid="uid://u3yjdnh1l66a" path="res://interactive/pentagram/pentagram.blend" id="2_4tguq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ioo17"]
 radius = 1.0
