@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="7_d13ii"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="8_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="12_xuqvo"]
-[ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="13_qsp4k"]
 [ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
@@ -179,9 +178,6 @@ transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96
 
 [node name="kwiatek" parent="World/unkategorizetJet" unique_id=1613215920 instance=ExtResource("14_kq58d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
-
-[node name="Priest" parent="World/unkategorizetJet" unique_id=813078529 instance=ExtResource("13_qsp4k")]
-transform = Transform3D(-0.47222775, 0, 0.8814766, 0, 1, 0, -0.8814766, 0, -0.47222775, 81.70491, 0, -19.60149)
 
 [node name="Zomb1" parent="World/unkategorizetJet" unique_id=1318007586 instance=ExtResource("12_xuqvo")]
 transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.82505435, 72.15748, 0, -23.925222)

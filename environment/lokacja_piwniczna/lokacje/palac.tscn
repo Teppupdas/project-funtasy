@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://interactive/pentagram/pentagram.tscn" id="1_u3c26"]
 [ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_ywa1a"]
+[ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="3_7wcej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywa1a"]
 size = Vector3(2.029058, 2, 3.0127258)
@@ -50,3 +51,6 @@ metadata/remove_location = ["dluga"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.997255, -3.010417, -2.5301514)
 shape = SubResource("BoxShape3D_u3c26")
 debug_color = Color(0.5846649, 0.22155255, 0.7187457, 0.41960785)
+
+[node name="Priest" parent="." unique_id=813078529 instance=ExtResource("3_7wcej")]
+transform = Transform3D(-0.94617975, 0, -0.3236416, 0, 1, 0, 0.3236416, 0, -0.94617975, -1.8064926, 0.0014562756, -12.438711)

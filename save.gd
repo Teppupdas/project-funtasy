@@ -18,7 +18,7 @@ var cimur
 
 func _ready():
 	randomize()
-	call_deferred("load_game") #opóżnione wywołanie bo sie bugowało że było null instance
+	load_game.call_deferred() #opóżnione wywołanie bo sie bugowało że było null instance
 
 
 

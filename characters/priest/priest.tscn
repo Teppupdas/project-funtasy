@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://ccggf66d3xip1"]
 
 [ext_resource type="PackedScene" uid="uid://drlea5pwb0fsk" path="res://characters/priest/priest.blend" id="1_5dscx"]
+[ext_resource type="Script" uid="uid://moxu2b87lytf" path="res://characters/priest/priest.gd" id="1_wq0bf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wq0bf"]
+height = 3.4
 
 [node name="Priest" type="CharacterBody3D" unique_id=813078529]
+collision_layer = 4
+script = ExtResource("1_wq0bf")
 
 [node name="priest" parent="." unique_id=328065527 instance=ExtResource("1_5dscx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=503609999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
+shape = SubResource("CapsuleShape3D_wq0bf")
