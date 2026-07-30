@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bw3bxqlk01v7b"]
+
+[ext_resource type="Texture2D" uid="uid://cpd7dp3rg8dg0" path="res://enemy_health_bar/bar.png" id="1_b0p6s"]
+
+[node name="EnemyHealthBar" type="Node3D" unique_id=1867347080]
+
+[node name="healthbar" type="Sprite3D" parent="." unique_id=1106398890]
+modulate = Color(0.6986849, 0.08142998, 6.738305e-07, 1)
+billboard = 1
+render_priority = 1
+texture = ExtResource("1_b0p6s")
+
+[node name="background" type="Sprite3D" parent="." unique_id=1445375049]
+modulate = Color(0.15127608, 0.15127608, 0.15127608, 1)
+billboard = 1
+texture = ExtResource("1_b0p6s")

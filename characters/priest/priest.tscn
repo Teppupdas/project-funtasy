@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drlea5pwb0fsk" path="res://characters/priest/priest.blend" id="1_5dscx"]
 [ext_resource type="Script" uid="uid://moxu2b87lytf" path="res://characters/priest/priest.gd" id="1_wq0bf"]
+[ext_resource type="PackedScene" uid="uid://bw3bxqlk01v7b" path="res://enemy_health_bar/enemy_health_bar.tscn" id="3_lbkt5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wq0bf"]
 height = 3.4
@@ -15,3 +16,6 @@ script = ExtResource("1_wq0bf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=503609999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("CapsuleShape3D_wq0bf")
+
+[node name="EnemyHealthBar" parent="." unique_id=1867347080 instance=ExtResource("3_lbkt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5507143, 0)

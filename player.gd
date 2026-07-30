@@ -160,7 +160,7 @@ func attack():
 	if Input.is_action_just_pressed("attack1"):
 		damage = 5
 		damageArea.monitoring = true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.1).timeout
 		#await get_tree().create_timer(anim_player.get_animation("AtakRekaSzybki1").length).timeout
 		
 		damageArea.monitoring = false
