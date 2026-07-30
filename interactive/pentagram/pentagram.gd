@@ -18,7 +18,7 @@ func handle_interaction():
 	
 	
 	#animacja jakas przykrywka
-	#reset listy zabitych przeicwników
+	GameState.world_state.clear()
 	clear_locations()
 	save_node.load_game()
 	

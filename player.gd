@@ -173,6 +173,6 @@ func attack():
 
 
 func _on_damage_area_body_entered(body: Node3D) -> void:
-	if body.has_method("take_damage") and not body in already_hit_enemies:
-		body.take_damage(damage)  # wywołanie funkcji przyjmowania dmg u przeciwnika
+	if body.has_method("apply_damage") and not body in already_hit_enemies:
+		body.apply_damage(damage)  # wywołanie funkcji przyjmowania dmg u przeciwnika
 		already_hit_enemies.append(body)  # zapamietywanie ze dany przeciwnik juz trafiony
