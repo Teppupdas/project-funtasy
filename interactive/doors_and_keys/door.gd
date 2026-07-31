@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var save_node = $"../../../../Save"
+@onready var save_node = get_node("/root/Main/Save")
 
 @export var key: String
 

@@ -1,9 +1,9 @@
 extends Node3D
 
 
-@onready var save_node = $"../../../../Save"
-@onready var ui = $"../../../../CanvasLayer"
-@onready var player = $"../../../Player"
+@onready var save_node = get_node("/root/Main/Save")
+@onready var ui = get_node("/root/Main/CanvasLayer")
+@onready var player = get_node("/root/Main/World/Player")
 
 
 
@@ -18,7 +18,7 @@ func handle_interaction():
 	
 	
 	#animacja jakas przykrywka
-	GameState.world_state.clear()
+	save_node.world_state.clear()
 	clear_locations()
 	save_node.load_game()
 	

@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var save_node = $"../../../../Save"
-@onready var ui = $"../../../../CanvasLayer"
+@onready var save_node = get_node("/root/Main/Save")
+@onready var ui = get_node("/root/Main/CanvasLayer")
 
 
 

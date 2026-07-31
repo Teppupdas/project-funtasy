@@ -1,29 +1,13 @@
 [gd_scene format=3 uid="uid://eq16xhi4u081"]
 
-[ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://save.gd" id="1_yaehf"]
-[ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://user_interface.gd" id="2_074og"]
-[ext_resource type="Script" uid="uid://c4p26mt4b2v6k" path="res://location_manager.gd" id="3_2cqfq"]
-[ext_resource type="Script" uid="uid://osi202gsr180" path="res://player.gd" id="3_cegan"]
-[ext_resource type="PackedScene" uid="uid://maiy06otipmx" path="res://player.blend" id="4_82xsv"]
-[ext_resource type="Script" uid="uid://cu518ew5fj0ua" path="res://camera.gd" id="5_getpj"]
-[ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="7_d13ii"]
-[ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="8_1u8w0"]
-[ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="12_xuqvo"]
-[ext_resource type="PackedScene" uid="uid://db6c8imimeiuc" path="res://environment/kwiatek.blend" id="14_kq58d"]
+[ext_resource type="Script" uid="uid://cjbf0rxln7frg" path="res://scripts/save.gd" id="1_yaehf"]
+[ext_resource type="Script" uid="uid://dioycioo4ywcv" path="res://scripts/user_interface.gd" id="2_074og"]
+[ext_resource type="Script" uid="uid://c4p26mt4b2v6k" path="res://scripts/location_manager.gd" id="3_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://dry77f1b8pxf8" path="res://player/player.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dwbse"]
-radius = 0.4
-height = 1.6
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wse8f"]
-points = PackedVector3Array(0, 1.35, 0, 1, 1.5, -2, 1, 0.1, -2, -1, 0.1, -2, -1, 1.5, -2)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_wse8f"]
-radius = 0.2
-
-[node name="Root" type="Node" unique_id=1127780170]
+[node name="Main" type="Node" unique_id=1127780170]
 
 [node name="Save" type="Node" parent="." unique_id=664821633]
 script = ExtResource("1_yaehf")
@@ -127,72 +111,15 @@ grow_vertical = 2
 
 [node name="World" type="Node" parent="." unique_id=1254761138]
 
-[node name="Player" type="CharacterBody3D" parent="World" unique_id=1911154302]
-physics_interpolation_mode = 1
-collision_layer = 2
-collision_mask = 5
-floor_constant_speed = true
-floor_snap_length = 0.3
-script = ExtResource("3_cegan")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player" unique_id=103614961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("CapsuleShape3D_dwbse")
-
-[node name="player" parent="World/Player" unique_id=1937838082 instance=ExtResource("4_82xsv")]
-
-[node name="damageArea" type="Area3D" parent="World/Player/player" unique_id=1349113692]
-collision_layer = 0
-collision_mask = 4
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/player/damageArea" unique_id=1909918385]
-shape = SubResource("ConvexPolygonShape3D_wse8f")
-debug_color = Color(1, 0, 0, 1)
-
-[node name="TriggerDetector" type="Area3D" parent="World/Player/player" unique_id=1818885972]
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Player/player/TriggerDetector" unique_id=756378901]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-shape = SubResource("CapsuleShape3D_dwbse")
-
-[node name="CameraPivot" type="Node3D" parent="World/Player" unique_id=168211943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-script = ExtResource("5_getpj")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="World/Player/CameraPivot" unique_id=1578143808]
-shape = SubResource("SphereShape3D_wse8f")
-spring_length = 4.0
-margin = 0.1
-
-[node name="Camera3D" type="Camera3D" parent="World/Player/CameraPivot/SpringArm3D" unique_id=39984692]
-fov = 85.0
-
-[node name="unkategorizetJet" type="Node" parent="World" unique_id=1238525377]
-
-[node name="pomnik" parent="World/unkategorizetJet" unique_id=1388138024 instance=ExtResource("8_1u8w0")]
-transform = Transform3D(0.96943676, 0, 0.24534123, 0, 1, 0, -0.24534123, 0, 0.96943676, 76.9092, 0, -29.216759)
-
-[node name="kwiatek" parent="World/unkategorizetJet" unique_id=1613215920 instance=ExtResource("14_kq58d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.354462, 0, 1.937129)
-
-[node name="Zomb1" parent="World/unkategorizetJet" unique_id=1318007586 instance=ExtResource("12_xuqvo")]
-transform = Transform3D(0.82505435, 0, -0.5650534, 0, 1, 0, 0.5650534, 0, 0.82505435, 72.15748, 0, -23.925222)
-
-[node name="skyeye" parent="World/unkategorizetJet" unique_id=495436368 instance=ExtResource("15_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
-script = ExtResource("16_htxhm")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/unkategorizetJet/skyeye" unique_id=1389180202]
-
-[node name="blok" parent="World/unkategorizetJet" unique_id=38042711 instance=ExtResource("7_d13ii")]
-transform = Transform3D(0.5533916, 0, 0.83292127, 0, 1, 0, -0.83292127, 0, 0.5533916, 71.58717, 0, -55.29)
+[node name="Player" parent="World" unique_id=145585783 instance=ExtResource("3_7mycd")]
 
 [node name="Locations" type="Node" parent="World" unique_id=1493617716]
 script = ExtResource("3_2cqfq")
 
-[connection signal="body_entered" from="World/Player/player/damageArea" to="World/Player" method="_on_damage_area_body_entered"]
-[connection signal="area_entered" from="World/Player/player/TriggerDetector" to="World/Locations" method="_on_player_trigger_detector_area_entered"]
+[node name="Sky" type="Node" parent="World" unique_id=1238525377]
+
+[node name="skyeye" parent="World/Sky" unique_id=495436368 instance=ExtResource("15_seu75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
+script = ExtResource("16_htxhm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/Sky/skyeye" unique_id=1389180202]

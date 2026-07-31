@@ -1,14 +1,16 @@
 extends Node
 
 
-@onready var player = $"../World/Player"
-@onready var ui = $"../CanvasLayer"
+@onready var player = get_node("/root/Main/World/Player")
+@onready var ui = get_node("/root/Main/CanvasLayer")
 
 
 # KLCZUZE
 var cimur
 
 
+# slownik kurwa. aktualnie przechowuje tylko enemy hp
+var world_state: Dictionary = {}
 
 
 
