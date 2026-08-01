@@ -18,7 +18,7 @@ var LOCATION_REGISTRY = {
 
 
 func _ready() -> void:
-	#połączenie z TriggerDetector w scenie gracza
+	#połączenie z sygnałem TriggerDetector w scenie gracza
 	var trigger = get_node("/root/Main/World/Player/TriggerDetector") 
 	trigger.area_entered.connect(_on_player_trigger_detector_area_entered)
 

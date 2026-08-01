@@ -39,15 +39,24 @@
 			#current_action = Actions.MOVEMENT
 			#await get_tree().create_timer(DASH_COOLDOWN).timeout
 			#can_dash = true
-#
-#
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 extends CharacterBody3D
 
-
-@onready var camera_pivot = $CameraPivot 
-@onready var model_3d = $player
-@onready var damageArea = $player/damageArea
+@onready var camera = $Camera3D
+@onready var damageArea = $DamageArea
 
 
 var max_hp: int = 100
@@ -55,7 +64,7 @@ var current_hp: int = 100
 
 
 # move
-var move_vector = Vector3.ZERO
+var move_direction = Vector3.ZERO
 var move_speed = 7.0
 var rotation_speed = 0.15
 var braking_speed = 1.5
@@ -80,6 +89,47 @@ var already_hit_enemies: Array = []  # przeciwnicy juz trafieni
 
 
 
+
+
+
+
+
+
+
+
+
+# czułość myszki i pada
+var mouse_sense = 0.001
+var pad_sense = 2
+
+
+func _unhandled_input(event):
+	# obsługa myszki
+	if event is InputEventMouseMotion:
+		rotate_cam(-event.relative.x * mouse_sense, -event.relative.y * mouse_sense)
+
+func _process(delta):
+	# obsługa pada prawej gałki
+	var joy = Input.get_vector("look_right", "look_left", "look_down", "look_up")
+	rotate_cam(joy.x * pad_sense * delta, joy.y * pad_sense * delta) # delta ma być
+
+func rotate_cam(x, y):
+	rotate_y(x) #obraca graczem lewo-prawo
+	camera.rotate_x(y) #obraca kamere góra-dół
+	camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(70), deg_to_rad(70)) #blokuje kamery zakres góra-dół
+
+
+
+
+
+
+
+
+
+
+
+
+
 func _physics_process(delta):
 	movement(delta)
 	jump_and_gravity(delta)
@@ -90,31 +140,25 @@ func _physics_process(delta):
 
 
 
+
+
 func movement(delta):
-	
 	# pobranie input dla ruchu
-	var input_vector = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
-	# pobranie obrotu z kamery
-	var cam_basis = camera_pivot.global_transform.basis
-	var forward = Vector3(cam_basis.z.x, 0, cam_basis.z.z).normalized()
-	var right = Vector3(cam_basis.x.x, 0, cam_basis.x.z).normalized()
+	var move_input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
 	# ustawienie kierunku ruchu
-	move_vector = (forward * input_vector.y + right * input_vector.x).normalized()
+	var move_direction = (transform.basis * Vector3(move_input.x, 0, move_input.y)).normalized()
 
 
-	if move_vector != Vector3.ZERO:
+	if move_direction != Vector3.ZERO:
 		# przypisanie prędkości
-		velocity.x = move_vector.x * move_speed
-		velocity.z = move_vector.z * move_speed
-		
-		# wykonanie obrotu
-		model_3d.rotation.y = lerp_angle(model_3d.rotation.y, atan2(forward.x, forward.z), rotation_speed)
+		velocity.x = move_direction.x * move_speed
+		velocity.z = move_direction.z * move_speed
 	else:
 		# płynne zatrzymanie
 		velocity.x = move_toward(velocity.x, 0, braking_speed)
 		velocity.z = move_toward(velocity.z, 0, braking_speed)
+
 
 func jump_and_gravity(delta):
 
@@ -155,6 +199,7 @@ func jump_and_gravity(delta):
 			current_gravity = strong_gravity
 		
 		velocity.y -= current_gravity * delta
+
 
 func attack():
 	if Input.is_action_just_pressed("attack1"):

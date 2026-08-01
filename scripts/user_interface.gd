@@ -28,6 +28,7 @@ var current_interaction_object = null
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) #ukrycie myszki
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #blokada kursora i nie pokazuje go
 	
 	#TranslationServer.set_locale(OS.get_locale()) #auto jezyk z systemu. nie testowane.
 	#TranslationServer.set_locale("pl")
