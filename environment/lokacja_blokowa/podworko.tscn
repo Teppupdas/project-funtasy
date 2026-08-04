@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bytweulrfsx1b" path="res://environment/lokacja_blokowa/kwiatek.res" id="3_432m0"]
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="4_o2wxl"]
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="5_xueb7"]
+[ext_resource type="PackedScene" uid="uid://h624ftsf7x5v" path="res://environment/arena.blend" id="6_36lxj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jfg5"]
 size = Vector3(7.028342, 2, 109.244026)
@@ -56,3 +57,6 @@ transform = Transform3D(0.819852, 0, 0.5725755, 0, 1, 0, -0.5725755, 0, 0.819852
 
 [node name="blok" parent="." unique_id=38042711 instance=ExtResource("5_xueb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.84594, 1.5999963, -56.046658)
+
+[node name="arena" parent="." unique_id=838287624 instance=ExtResource("6_36lxj")]
+transform = Transform3D(0.49228632, 0, 0.8704334, 0, 1, 0, -0.8704334, 0, 0.49228632, 19.791832, 0, -46.825035)

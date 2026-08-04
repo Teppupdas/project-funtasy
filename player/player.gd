@@ -145,10 +145,8 @@ func _physics_process(delta):
 func movement(delta):
 	# pobranie input dla ruchu
 	var move_input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
 	# ustawienie kierunku ruchu
 	var move_direction = (transform.basis * Vector3(move_input.x, 0, move_input.y)).normalized()
-
 
 	if move_direction != Vector3.ZERO:
 		# przypisanie prędkości
