@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mt1ogm57l00d" path="res://environment/lokacja_blokowa/pomnik.blend" id="4_o2wxl"]
 [ext_resource type="PackedScene" uid="uid://c28m8if8hptf5" path="res://environment/lokacja_blokowa/blok.blend" id="5_xueb7"]
 [ext_resource type="PackedScene" uid="uid://h624ftsf7x5v" path="res://environment/arena.blend" id="6_36lxj"]
+[ext_resource type="PackedScene" uid="uid://c1qjqv66n1hcu" path="res://environment/kamper.blend" id="7_1vsov"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jfg5"]
 size = Vector3(7.028342, 2, 109.244026)
@@ -60,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.84594, 1.5999963, -56.046
 
 [node name="arena" parent="." unique_id=838287624 instance=ExtResource("6_36lxj")]
 transform = Transform3D(0.49228632, 0, 0.8704334, 0, 1, 0, -0.8704334, 0, 0.49228632, 19.791832, 0, -46.825035)
+
+[node name="kamper" parent="." unique_id=900565846 instance=ExtResource("7_1vsov")]
+transform = Transform3D(0.96485305, 0, 0.26279038, 0, 1, 0, -0.26279038, 0, 0.96485305, 69.37138, 0, 17.898893)
