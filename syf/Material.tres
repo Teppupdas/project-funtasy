@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://chr0xoqo51yyx" path="res://syf/color_atlas.png" id="1_v5dyr"]
 
 [resource]
-shading_mode = 0
 albedo_texture = ExtResource("1_v5dyr")
 proximity_fade_distance = 3563.66
 stencil_flags = 2

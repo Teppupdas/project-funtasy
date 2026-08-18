@@ -54,7 +54,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/kwiatek.res",
+"save_to_file/fallback_path": "res://environment/lokacja_blokowa/kwiatek.res",
 "save_to_file/path": "uid://bytweulrfsx1b"
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bll1kpc4c11u1"
-path="res://.godot/imported/skyeye.blend-9c453dc1aeb46bdbece75e8ef8e30d27.scn"
+uid="uid://dmnhtsvwoguyf"
+path="res://.godot/imported/old_city.blend-4ae453166579cb1492bfb4e3f59cc6b9.scn"
 
 [deps]
 
-source_file="res://environment/skyeye.blend"
-dest_files=["res://.godot/imported/skyeye.blend-9c453dc1aeb46bdbece75e8ef8e30d27.scn"]
+source_file="res://environment/old_city.blend"
+dest_files=["res://.godot/imported/old_city.blend-4ae453166579cb1492bfb4e3f59cc6b9.scn"]
 
 [params]
 
@@ -41,15 +41,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"MaterialU": {
+"Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://syf/MaterialU.tres",
-"use_external/path": "uid://dswgjejcwi371"
-}
-},
-"nodes": {
-"PATH:Sphere": {
-"mesh_instance/cast_shadow": 0
+"use_external/fallback_path": "res://syf/Material.tres",
+"use_external/path": "uid://cy7hf6bm5u0bv"
 }
 }
 }
@@ -59,7 +54,7 @@ blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
 blender/nodes/custom_properties=true
 blender/nodes/modifiers=1
-blender/meshes/vertex_colors=2
+blender/meshes/vertex_colors=1
 blender/meshes/uvs=true
 blender/meshes/normals=true
 blender/meshes/export_geometry_nodes_instances=false
@@ -73,4 +68,4 @@ blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
 gltf/naming_version=2
-gltf/texture_map_mode=0
+gltf/texture_map_mode=1

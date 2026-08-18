@@ -7,7 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://bll1kpc4c11u1" path="res://environment/skyeye.blend" id="15_seu75"]
 [ext_resource type="Script" uid="uid://bkwb24esnriwh" path="res://environment/skyeye.gd" id="16_htxhm"]
 
+[sub_resource type="Environment" id="Environment_v5dyr"]
+ambient_light_source = 2
+ambient_light_color = Color(0.8149547, 0.7633185, 0.83224815, 1)
+ssao_enabled = true
+ssao_intensity = 4.0
+ssao_power = 2.0
+ssao_detail = 0.2
+
 [node name="Main" type="Node" unique_id=1127780170]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=451524175]
+environment = SubResource("Environment_v5dyr")
 
 [node name="Save" type="Node" parent="." unique_id=664821633]
 script = ExtResource("1_yaehf")
@@ -118,8 +129,6 @@ script = ExtResource("3_2cqfq")
 
 [node name="Sky" type="Node" parent="World" unique_id=1238525377]
 
-[node name="skyeye" parent="World/Sky" unique_id=495436368 instance=ExtResource("15_seu75")]
+[node name="skyeye" parent="World/Sky" unique_id=1148005838 instance=ExtResource("15_seu75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, -700)
 script = ExtResource("16_htxhm")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World/Sky/skyeye" unique_id=1389180202]
