@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://besbvcer43yak"]
 
-[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_wayhl"]
+[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/piwnice.meshlib" id="1_wayhl"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wayhl"]
 size = Vector3(1.2509873, 3.5317383, 4.1393127)

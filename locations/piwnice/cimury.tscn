@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://crdxyow0fwmtt"]
 
-[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_c1f81"]
+[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/piwnice.meshlib" id="1_c1f81"]
 [ext_resource type="PackedScene" uid="uid://d1hbipdw47e5" path="res://interactive/doors_and_keys/door.tscn" id="2_xnhw5"]
 [ext_resource type="PackedScene" uid="uid://c8sevgjrv6p4v" path="res://interactive/doors_and_keys/key.tscn" id="3_6gr7x"]
 [ext_resource type="PackedScene" uid="uid://d3n8a5cq1g54i" path="res://characters/zomb1/zomb1.tscn" id="4_6gr7x"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6atf"]
 size = Vector3(7.6703687, 2, 2)

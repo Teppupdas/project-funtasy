@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6lsv4y15v1ph"]
+
+[ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://interactive/pentagram/pentagram.tscn" id="1_kxfxf"]
+[ext_resource type="PackedScene" uid="uid://dmnhtsvwoguyf" path="res://environment/old_city/old_city.blend" id="2_i3fxe"]
+[ext_resource type="PackedScene" uid="uid://h624ftsf7x5v" path="res://environment/old_city/arena.blend" id="3_i3fxe"]
+[ext_resource type="PackedScene" uid="uid://cjlhs0v3mr2wr" path="res://environment/old_city/birdcage.tscn" id="4_tdxog"]
+
+[node name="oldcity" type="Node3D" unique_id=966825944]
+
+[node name="Pentagram" parent="." unique_id=1847881706 instance=ExtResource("1_kxfxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.71664, 0, 168.15182)
+
+[node name="old_city" parent="." unique_id=13169682 instance=ExtResource("2_i3fxe")]
+
+[node name="arena" parent="." unique_id=109833908 instance=ExtResource("3_i3fxe")]
+transform = Transform3D(0.77004445, 0, -0.63799024, 0, 1, 0, 0.63799024, 0, 0.77004445, 764.35254, 1.0000305, 188.14038)
+
+[node name="birdcage" parent="." unique_id=657762830 instance=ExtResource("4_tdxog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 750, 1, 520)
+start_pos = Vector3(750, 1, 520)
+end_pos = Vector3(750, 100, 520)
+time = 13.0

@@ -71,7 +71,7 @@ func load_game():
 
 
 	#wczytanie lokacji
-	var location_to_load = data_file.get_value("player", "current_location", "uid://g0cbjac744xs")
+	var location_to_load = data_file.get_value("player", "current_location", "uid://6lsv4y15v1ph")
 	var loaded_location = load(location_to_load).instantiate()
 	$"../World/Locations".add_child(loaded_location)
 	#ustawienie pozycji gracza w lokacji

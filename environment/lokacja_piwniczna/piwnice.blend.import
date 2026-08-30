@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wcofqrc1hn1l"
-path="res://.godot/imported/piwnice.blend-581c85cf33bec1812b7c45868b1b3bc7.scn"
+path="res://.godot/imported/piwnice.blend-0c15160c6030d68c5b6028fb7a175b54.scn"
 
 [deps]
 
-source_file="res://environment/lokacja_piwniczna/zasoby/piwnice.blend"
-dest_files=["res://.godot/imported/piwnice.blend-581c85cf33bec1812b7c45868b1b3bc7.scn"]
+source_file="res://environment/lokacja_piwniczna/piwnice.blend"
+dest_files=["res://.godot/imported/piwnice.blend-0c15160c6030d68c5b6028fb7a175b54.scn"]
 
 [params]
 
@@ -54,7 +54,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/zasoby/schody.res",
+"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/schody.res",
 "save_to_file/path": "uid://cfoygebfjoij2"
 },
 "piwnice_Cube_002": {
@@ -63,7 +63,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/zasoby/sciana.res",
+"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/sciana.res",
 "save_to_file/path": "uid://oxlk4kdsorp4"
 },
 "piwnice_Cube_004": {
@@ -72,7 +72,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/zasoby/drzwi.res",
+"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/drzwi.res",
 "save_to_file/path": "uid://b2gmtyvewybia"
 },
 "piwnice_Cube_005": {
@@ -81,7 +81,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/zasoby/przejscie.res",
+"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/przejscie.res",
 "save_to_file/path": "uid://c57velqk10c1p"
 },
 "piwnice_Plane": {
@@ -90,7 +90,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/zasoby/podloga1.res",
+"save_to_file/fallback_path": "res://environment/lokacja_piwniczna/podloga1.res",
 "save_to_file/path": "uid://dste2hchwuv2"
 }
 }

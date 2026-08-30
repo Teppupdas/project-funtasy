@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dajhyeuqnwryn"]
 
-[ext_resource type="ArrayMesh" uid="uid://b2gmtyvewybia" path="res://environment/lokacja_piwniczna/zasoby/drzwi.res" id="1_ih3gh"]
-[ext_resource type="ArrayMesh" uid="uid://dste2hchwuv2" path="res://environment/lokacja_piwniczna/zasoby/podloga1.res" id="2_6ism4"]
-[ext_resource type="ArrayMesh" uid="uid://c57velqk10c1p" path="res://environment/lokacja_piwniczna/zasoby/przejscie.res" id="3_sdrvd"]
-[ext_resource type="ArrayMesh" uid="uid://cfoygebfjoij2" path="res://environment/lokacja_piwniczna/zasoby/schody.res" id="4_s5nmx"]
-[ext_resource type="ArrayMesh" uid="uid://oxlk4kdsorp4" path="res://environment/lokacja_piwniczna/zasoby/sciana.res" id="5_7n4rt"]
+[ext_resource type="ArrayMesh" uid="uid://b2gmtyvewybia" path="res://environment/lokacja_piwniczna/drzwi.res" id="1_ih3gh"]
+[ext_resource type="ArrayMesh" uid="uid://dste2hchwuv2" path="res://environment/lokacja_piwniczna/podloga1.res" id="2_6ism4"]
+[ext_resource type="ArrayMesh" uid="uid://c57velqk10c1p" path="res://environment/lokacja_piwniczna/przejscie.res" id="3_sdrvd"]
+[ext_resource type="ArrayMesh" uid="uid://cfoygebfjoij2" path="res://environment/lokacja_piwniczna/schody.res" id="4_s5nmx"]
+[ext_resource type="ArrayMesh" uid="uid://oxlk4kdsorp4" path="res://environment/lokacja_piwniczna/sciana.res" id="5_7n4rt"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8sp5"]
 size = Vector3(2.4, 4, 0.1)

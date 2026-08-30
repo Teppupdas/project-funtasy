@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://h624ftsf7x5v"
-path="res://.godot/imported/arena.blend-51ad5f2962f42826510cc16c1cc8d026.scn"
+uid="uid://da24bcoxnvbqx"
+path="res://.godot/imported/birdcage.blend-5111b30cc1bab7809538ec3e1b3e0d19.scn"
 
 [deps]
 
-source_file="res://environment/arena.blend"
-dest_files=["res://.godot/imported/arena.blend-51ad5f2962f42826510cc16c1cc8d026.scn"]
+source_file="res://environment/old_city/birdcage.blend"
+dest_files=["res://.godot/imported/birdcage.blend-5111b30cc1bab7809538ec3e1b3e0d19.scn"]
 
 [params]
 

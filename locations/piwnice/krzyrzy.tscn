@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b44lh2cfb7oni"]
 
-[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_4yil7"]
+[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/piwnice.meshlib" id="1_4yil7"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="2_wnirs"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yil7"]
 size = Vector3(2.4938407, 4.4207153, 2.709015)

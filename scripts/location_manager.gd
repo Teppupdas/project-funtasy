@@ -2,6 +2,9 @@ extends Node
 
 # LOKACJE:
 var LOCATION_REGISTRY = {
+	#oldcity
+	"oldcity": "uid://6lsv4y15v1ph",
+	
 	#bloki
 	"podworko": "uid://g0cbjac744xs",
 	

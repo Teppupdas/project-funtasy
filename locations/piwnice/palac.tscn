@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dye5fi6qua0ei"]
 
 [ext_resource type="PackedScene" uid="uid://q5iikubtgdxo" path="res://interactive/pentagram/pentagram.tscn" id="1_u3c26"]
-[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/zasoby/piwnice.meshlib" id="1_ywa1a"]
+[ext_resource type="MeshLibrary" uid="uid://cdjodksxmovcu" path="res://environment/lokacja_piwniczna/piwnice.meshlib" id="1_ywa1a"]
 [ext_resource type="PackedScene" uid="uid://ccggf66d3xip1" path="res://characters/priest/priest.tscn" id="3_7wcej"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywa1a"]
 size = Vector3(2.029058, 2, 3.0127258)
